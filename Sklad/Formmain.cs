@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Sklad
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
+            panel1.Visible = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -59,6 +60,56 @@ namespace Sklad
                 Validate();
                 materialsBindingSource.EndEdit();
                 materialsTableAdapter.Update(skladDataSet.Materials);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void типыМатериаловToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTypeMaterials f = new FormTypeMaterials();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                this.typeMaterialTableAdapter.Fill(this.skladDataSet.TypeMaterial);
+            }
+        }
+
+        private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDepartament f = new FormDepartament();
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                this.departamentTableAdapter.Fill(this.skladDataSet.Departament);
+            }
+        }
+
+        private void стеллажиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStellazh f = new FormStellazh();
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                this.stellazhTableAdapter.Fill(this.skladDataSet.Stellazh);
+            }
+        }
+
+        private void полкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPolka f = new FormPolka();
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                this.shelfTableAdapter.Fill(this.skladDataSet.Shelf);
+            }
+        }
+
+        private void целиХраненияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPropoise f = new FormPropoise();
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                this.purposeTableAdapter.Fill(this.skladDataSet.purpose);
             }
         }
     }

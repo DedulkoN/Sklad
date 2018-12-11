@@ -1,6 +1,6 @@
 ﻿namespace Sklad
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -29,44 +29,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.typeMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.materialsTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialsTableAdapter();
-            this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
-            this.departamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departamentTableAdapter = new Sklad.SkladDataSetTableAdapters.DepartamentTableAdapter();
-            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
-            this.shelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.shelfTableAdapter = new Sklad.SkladDataSetTableAdapters.ShelfTableAdapter();
-            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             this.materialsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeMaterialIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.typeMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
             this.departamentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.departamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stellazhIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.shelfIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.shelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.purposeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialsTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialsTableAdapter();
+            this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
+            this.departamentTableAdapter = new Sklad.SkladDataSetTableAdapters.DepartamentTableAdapter();
+            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
+            this.shelfTableAdapter = new Sklad.SkladDataSetTableAdapters.ShelfTableAdapter();
+            this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.панельАдминистратораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.типыМатериаловToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отделыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.стеллажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.полкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.целиХраненияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -83,73 +86,15 @@
             this.purposeIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.materialsBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(749, 300);
+            this.dataGridView1.Size = new System.Drawing.Size(893, 349);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.AllowUserToDeleteRowsChanged += new System.EventHandler(this.dataGridView1_AllowUserToDeleteRowsChanged);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
-            // 
-            // typeMaterialBindingSource
-            // 
-            this.typeMaterialBindingSource.DataMember = "TypeMaterial";
-            this.typeMaterialBindingSource.DataSource = this.skladDataSet;
-            // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // materialsBindingSource
-            // 
-            this.materialsBindingSource.DataMember = "Materials";
-            this.materialsBindingSource.DataSource = this.skladDataSet;
-            // 
-            // materialsTableAdapter
-            // 
-            this.materialsTableAdapter.ClearBeforeFill = true;
-            // 
-            // typeMaterialTableAdapter
-            // 
-            this.typeMaterialTableAdapter.ClearBeforeFill = true;
-            // 
-            // departamentBindingSource
-            // 
-            this.departamentBindingSource.DataMember = "Departament";
-            this.departamentBindingSource.DataSource = this.skladDataSet;
-            // 
-            // departamentTableAdapter
-            // 
-            this.departamentTableAdapter.ClearBeforeFill = true;
-            // 
-            // stellazhBindingSource
-            // 
-            this.stellazhBindingSource.DataMember = "Stellazh";
-            this.stellazhBindingSource.DataSource = this.skladDataSet;
-            // 
-            // stellazhTableAdapter
-            // 
-            this.stellazhTableAdapter.ClearBeforeFill = true;
-            // 
-            // shelfBindingSource
-            // 
-            this.shelfBindingSource.DataMember = "Shelf";
-            this.shelfBindingSource.DataSource = this.skladDataSet;
-            // 
-            // shelfTableAdapter
-            // 
-            this.shelfTableAdapter.ClearBeforeFill = true;
-            // 
-            // purposeBindingSource
-            // 
-            this.purposeBindingSource.DataMember = "purpose";
-            this.purposeBindingSource.DataSource = this.skladDataSet;
-            // 
-            // purposeTableAdapter
-            // 
-            this.purposeTableAdapter.ClearBeforeFill = true;
             // 
             // materialsIDDataGridViewTextBoxColumn
             // 
@@ -178,6 +123,16 @@
             this.typeMaterialIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.typeMaterialIDDataGridViewTextBoxColumn.ValueMember = "TypeID";
             // 
+            // typeMaterialBindingSource
+            // 
+            this.typeMaterialBindingSource.DataMember = "TypeMaterial";
+            this.typeMaterialBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // departamentIDDataGridViewTextBoxColumn
             // 
             this.departamentIDDataGridViewTextBoxColumn.DataPropertyName = "DepartamentID";
@@ -188,6 +143,11 @@
             this.departamentIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.departamentIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.departamentIDDataGridViewTextBoxColumn.ValueMember = "DepartamentID";
+            // 
+            // departamentBindingSource
+            // 
+            this.departamentBindingSource.DataMember = "Departament";
+            this.departamentBindingSource.DataSource = this.skladDataSet;
             // 
             // stellazhIDDataGridViewTextBoxColumn
             // 
@@ -200,6 +160,11 @@
             this.stellazhIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.stellazhIDDataGridViewTextBoxColumn.ValueMember = "StellazhID";
             // 
+            // stellazhBindingSource
+            // 
+            this.stellazhBindingSource.DataMember = "Stellazh";
+            this.stellazhBindingSource.DataSource = this.skladDataSet;
+            // 
             // shelfIDDataGridViewTextBoxColumn
             // 
             this.shelfIDDataGridViewTextBoxColumn.DataPropertyName = "ShelfID";
@@ -211,6 +176,11 @@
             this.shelfIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.shelfIDDataGridViewTextBoxColumn.ValueMember = "ShelfID";
             // 
+            // shelfBindingSource
+            // 
+            this.shelfBindingSource.DataMember = "Shelf";
+            this.shelfBindingSource.DataSource = this.skladDataSet;
+            // 
             // purposeIDDataGridViewTextBoxColumn
             // 
             this.purposeIDDataGridViewTextBoxColumn.DataPropertyName = "purposeID";
@@ -221,6 +191,40 @@
             this.purposeIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.purposeIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.purposeIDDataGridViewTextBoxColumn.ValueMember = "purposeID";
+            // 
+            // purposeBindingSource
+            // 
+            this.purposeBindingSource.DataMember = "purpose";
+            this.purposeBindingSource.DataSource = this.skladDataSet;
+            // 
+            // materialsBindingSource
+            // 
+            this.materialsBindingSource.DataMember = "Materials";
+            this.materialsBindingSource.DataSource = this.skladDataSet;
+            // 
+            // materialsTableAdapter
+            // 
+            this.materialsTableAdapter.ClearBeforeFill = true;
+            // 
+            // typeMaterialTableAdapter
+            // 
+            this.typeMaterialTableAdapter.ClearBeforeFill = true;
+            // 
+            // departamentTableAdapter
+            // 
+            this.departamentTableAdapter.ClearBeforeFill = true;
+            // 
+            // stellazhTableAdapter
+            // 
+            this.stellazhTableAdapter.ClearBeforeFill = true;
+            // 
+            // shelfTableAdapter
+            // 
+            this.shelfTableAdapter.ClearBeforeFill = true;
+            // 
+            // purposeTableAdapter
+            // 
+            this.purposeTableAdapter.ClearBeforeFill = true;
             // 
             // menuStrip1
             // 
@@ -236,6 +240,12 @@
             // 
             // справочникиToolStripMenuItem
             // 
+            this.справочникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.типыМатериаловToolStripMenuItem,
+            this.отделыToolStripMenuItem,
+            this.стеллажиToolStripMenuItem,
+            this.полкиToolStripMenuItem,
+            this.целиХраненияToolStripMenuItem});
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
@@ -252,43 +262,72 @@
             this.панельАдминистратораToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.панельАдминистратораToolStripMenuItem.Text = "Панель администратора";
             // 
-            // splitContainer1
+            // panel1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Name = "splitContainer1";
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 373);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(893, 100);
+            this.panel1.TabIndex = 11;
             // 
-            // splitContainer1.Panel1
+            // типыМатериаловToolStripMenuItem
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(893, 300);
-            this.splitContainer1.SplitterDistance = 749;
-            this.splitContainer1.TabIndex = 11;
+            this.типыМатериаловToolStripMenuItem.Name = "типыМатериаловToolStripMenuItem";
+            this.типыМатериаловToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типыМатериаловToolStripMenuItem.Text = "Типы материалов";
+            this.типыМатериаловToolStripMenuItem.Click += new System.EventHandler(this.типыМатериаловToolStripMenuItem_Click);
             // 
-            // Form1
+            // отделыToolStripMenuItem
+            // 
+            this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
+            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отделыToolStripMenuItem.Text = "Отделы";
+            this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
+            // 
+            // стеллажиToolStripMenuItem
+            // 
+            this.стеллажиToolStripMenuItem.Name = "стеллажиToolStripMenuItem";
+            this.стеллажиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.стеллажиToolStripMenuItem.Text = "Стеллажи";
+            this.стеллажиToolStripMenuItem.Click += new System.EventHandler(this.стеллажиToolStripMenuItem_Click);
+            // 
+            // полкиToolStripMenuItem
+            // 
+            this.полкиToolStripMenuItem.Name = "полкиToolStripMenuItem";
+            this.полкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.полкиToolStripMenuItem.Text = "Полки";
+            this.полкиToolStripMenuItem.Click += new System.EventHandler(this.полкиToolStripMenuItem_Click);
+            // 
+            // целиХраненияToolStripMenuItem
+            // 
+            this.целиХраненияToolStripMenuItem.Name = "целиХраненияToolStripMenuItem";
+            this.целиХраненияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.целиХраненияToolStripMenuItem.Text = "Цели хранения";
+            this.целиХраненияToolStripMenuItem.Click += new System.EventHandler(this.целиХраненияToolStripMenuItem_Click);
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 324);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(893, 473);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormMain";
+            this.Text = "Главное окно";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +360,12 @@
         private System.Windows.Forms.ToolStripMenuItem справочникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem панельАдминистратораToolStripMenuItem;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem типыМатериаловToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отделыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem стеллажиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem полкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem целиХраненияToolStripMenuItem;
     }
 }
 

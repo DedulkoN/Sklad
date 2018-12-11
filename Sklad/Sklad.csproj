@@ -60,11 +60,53 @@
     <Compile Include="Departament.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAdminPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAdminPanel.Designer.cs">
+      <DependentUpon>FormAdminPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDepartament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDepartament.Designer.cs">
+      <DependentUpon>FormDepartament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPolka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPolka.Designer.cs">
+      <DependentUpon>FormPolka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPropoise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPropoise.Designer.cs">
+      <DependentUpon>FormPropoise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStellazh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStellazh.Designer.cs">
+      <DependentUpon>FormStellazh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTypeMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTypeMaterials.Designer.cs">
+      <DependentUpon>FormTypeMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="Materials.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -118,8 +160,23 @@
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormDepartament.resx">
+      <DependentUpon>FormDepartament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPolka.resx">
+      <DependentUpon>FormPolka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPropoise.resx">
+      <DependentUpon>FormPropoise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStellazh.resx">
+      <DependentUpon>FormStellazh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTypeMaterials.resx">
+      <DependentUpon>FormTypeMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
