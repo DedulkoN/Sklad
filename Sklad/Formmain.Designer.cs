@@ -53,14 +53,31 @@
             this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справочникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.панельАдминистратораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.типыМатериаловToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отделыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.стеллажиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.полкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.целиХраненияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.панельАдминистратораToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBoxName = new System.Windows.Forms.CheckBox();
+            this.checkBoxTypeMaterials = new System.Windows.Forms.CheckBox();
+            this.checkBoxDepartement = new System.Windows.Forms.CheckBox();
+            this.checkBoxStellaz = new System.Windows.Forms.CheckBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.comboBoxTypeMaterials = new System.Windows.Forms.ComboBox();
+            this.comboBoxDepartement = new System.Windows.Forms.ComboBox();
+            this.comboBoxStellaz = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.отобразитьПанельФильтровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
@@ -70,6 +87,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -84,11 +107,12 @@
             this.stellazhIDDataGridViewTextBoxColumn,
             this.shelfIDDataGridViewTextBoxColumn,
             this.purposeIDDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.materialsBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(893, 349);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 369);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.AllowUserToDeleteRowsChanged += new System.EventHandler(this.dataGridView1_AllowUserToDeleteRowsChanged);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -234,7 +258,7 @@
             this.панельАдминистратораToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(893, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(915, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,26 +273,6 @@
             this.справочникиToolStripMenuItem.Name = "справочникиToolStripMenuItem";
             this.справочникиToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.справочникиToolStripMenuItem.Text = "Справочники";
-            // 
-            // помощьToolStripMenuItem
-            // 
-            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
-            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.помощьToolStripMenuItem.Text = "Помощь";
-            // 
-            // панельАдминистратораToolStripMenuItem
-            // 
-            this.панельАдминистратораToolStripMenuItem.Name = "панельАдминистратораToolStripMenuItem";
-            this.панельАдминистратораToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
-            this.панельАдминистратораToolStripMenuItem.Text = "Панель администратора";
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 373);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(893, 100);
-            this.panel1.TabIndex = 11;
             // 
             // типыМатериаловToolStripMenuItem
             // 
@@ -305,11 +309,208 @@
             this.целиХраненияToolStripMenuItem.Text = "Цели хранения";
             this.целиХраненияToolStripMenuItem.Click += new System.EventHandler(this.целиХраненияToolStripMenuItem_Click);
             // 
+            // помощьToolStripMenuItem
+            // 
+            this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
+            this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.помощьToolStripMenuItem.Text = "Помощь";
+            // 
+            // панельАдминистратораToolStripMenuItem
+            // 
+            this.панельАдминистратораToolStripMenuItem.Name = "панельАдминистратораToolStripMenuItem";
+            this.панельАдминистратораToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.панельАдминистратораToolStripMenuItem.Text = "Панель администратора";
+            this.панельАдминистратораToolStripMenuItem.Click += new System.EventHandler(this.панельАдминистратораToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.groupBox4);
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 393);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(915, 80);
+            this.panel1.TabIndex = 11;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBoxName);
+            this.groupBox1.Controls.Add(this.checkBoxName);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 73);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Фильтр по наименованию";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBoxTypeMaterials);
+            this.groupBox2.Controls.Add(this.checkBoxTypeMaterials);
+            this.groupBox2.Location = new System.Drawing.Point(211, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(176, 71);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Тип материалов";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBoxDepartement);
+            this.groupBox3.Controls.Add(this.checkBoxDepartement);
+            this.groupBox3.Location = new System.Drawing.Point(393, 7);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 70);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Отдел";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.comboBoxStellaz);
+            this.groupBox4.Controls.Add(this.checkBoxStellaz);
+            this.groupBox4.Location = new System.Drawing.Point(599, 7);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(155, 70);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Стеллаж";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(757, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(146, 37);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Применить фильтр";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBoxName
+            // 
+            this.checkBoxName.AutoSize = true;
+            this.checkBoxName.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxName.Name = "checkBoxName";
+            this.checkBoxName.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxName.TabIndex = 0;
+            this.checkBoxName.Text = "Активен";
+            this.checkBoxName.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTypeMaterials
+            // 
+            this.checkBoxTypeMaterials.AutoSize = true;
+            this.checkBoxTypeMaterials.Location = new System.Drawing.Point(7, 18);
+            this.checkBoxTypeMaterials.Name = "checkBoxTypeMaterials";
+            this.checkBoxTypeMaterials.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxTypeMaterials.TabIndex = 0;
+            this.checkBoxTypeMaterials.Text = "Активен";
+            this.checkBoxTypeMaterials.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDepartement
+            // 
+            this.checkBoxDepartement.AutoSize = true;
+            this.checkBoxDepartement.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxDepartement.Name = "checkBoxDepartement";
+            this.checkBoxDepartement.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxDepartement.TabIndex = 0;
+            this.checkBoxDepartement.Text = "Активен";
+            this.checkBoxDepartement.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxStellaz
+            // 
+            this.checkBoxStellaz.AutoSize = true;
+            this.checkBoxStellaz.Location = new System.Drawing.Point(7, 20);
+            this.checkBoxStellaz.Name = "checkBoxStellaz";
+            this.checkBoxStellaz.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxStellaz.TabIndex = 0;
+            this.checkBoxStellaz.Text = "Активен";
+            this.checkBoxStellaz.UseVisualStyleBackColor = true;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(7, 44);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(187, 20);
+            this.textBoxName.TabIndex = 1;
+            // 
+            // comboBoxTypeMaterials
+            // 
+            this.comboBoxTypeMaterials.DataSource = this.typeMaterialBindingSource;
+            this.comboBoxTypeMaterials.DisplayMember = "TypeName";
+            this.comboBoxTypeMaterials.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTypeMaterials.FormattingEnabled = true;
+            this.comboBoxTypeMaterials.Location = new System.Drawing.Point(7, 41);
+            this.comboBoxTypeMaterials.Name = "comboBoxTypeMaterials";
+            this.comboBoxTypeMaterials.Size = new System.Drawing.Size(161, 21);
+            this.comboBoxTypeMaterials.TabIndex = 1;
+            this.comboBoxTypeMaterials.ValueMember = "TypeID";
+            // 
+            // comboBoxDepartement
+            // 
+            this.comboBoxDepartement.DataSource = this.departamentBindingSource;
+            this.comboBoxDepartement.DisplayMember = "DepartamentName";
+            this.comboBoxDepartement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDepartement.FormattingEnabled = true;
+            this.comboBoxDepartement.Location = new System.Drawing.Point(7, 41);
+            this.comboBoxDepartement.Name = "comboBoxDepartement";
+            this.comboBoxDepartement.Size = new System.Drawing.Size(187, 21);
+            this.comboBoxDepartement.TabIndex = 1;
+            this.comboBoxDepartement.ValueMember = "DepartamentID";
+            // 
+            // comboBoxStellaz
+            // 
+            this.comboBoxStellaz.DataSource = this.stellazhBindingSource;
+            this.comboBoxStellaz.DisplayMember = "StellazhID";
+            this.comboBoxStellaz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxStellaz.FormattingEnabled = true;
+            this.comboBoxStellaz.Location = new System.Drawing.Point(7, 44);
+            this.comboBoxStellaz.Name = "comboBoxStellaz";
+            this.comboBoxStellaz.Size = new System.Drawing.Size(142, 21);
+            this.comboBoxStellaz.TabIndex = 1;
+            this.comboBoxStellaz.ValueMember = "StellazhID";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(757, 47);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(146, 30);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Скрыть панель фильтров";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.отобразитьПанельФильтровToolStripMenuItem,
+            this.перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(381, 48);
+            // 
+            // отобразитьПанельФильтровToolStripMenuItem
+            // 
+            this.отобразитьПанельФильтровToolStripMenuItem.Name = "отобразитьПанельФильтровToolStripMenuItem";
+            this.отобразитьПанельФильтровToolStripMenuItem.Size = new System.Drawing.Size(380, 22);
+            this.отобразитьПанельФильтровToolStripMenuItem.Text = "Отобразить панель фильтров";
+            this.отобразитьПанельФильтровToolStripMenuItem.Click += new System.EventHandler(this.отобразитьПанельФильтровToolStripMenuItem_Click);
+            // 
+            // перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem
+            // 
+            this.перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem.Name = "перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem";
+            this.перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem.Size = new System.Drawing.Size(380, 22);
+            this.перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem.Text = "Перейти к перемещениям выделенного наименования";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 473);
+            this.ClientSize = new System.Drawing.Size(915, 473);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
@@ -328,6 +529,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,6 +577,23 @@
         private System.Windows.Forms.ToolStripMenuItem стеллажиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem полкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem целиХраненияToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBoxStellaz;
+        private System.Windows.Forms.CheckBox checkBoxStellaz;
+        private System.Windows.Forms.ComboBox comboBoxDepartement;
+        private System.Windows.Forms.CheckBox checkBoxDepartement;
+        private System.Windows.Forms.ComboBox comboBoxTypeMaterials;
+        private System.Windows.Forms.CheckBox checkBoxTypeMaterials;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.CheckBox checkBoxName;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem отобразитьПанельФильтровToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem перейтиКПеремещениямВыбранногоНаименованияToolStripMenuItem;
     }
 }
 

@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPropoise));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             this.purposeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purposeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
+            this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,20 +58,6 @@
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // purposeBindingSource
-            // 
-            this.purposeBindingSource.DataMember = "purpose";
-            this.purposeBindingSource.DataSource = this.skladDataSet;
-            // 
-            // purposeTableAdapter
-            // 
-            this.purposeTableAdapter.ClearBeforeFill = true;
-            // 
             // purposeIDDataGridViewTextBoxColumn
             // 
             this.purposeIDDataGridViewTextBoxColumn.DataPropertyName = "purposeID";
@@ -87,19 +74,34 @@
             this.purposeNameDataGridViewTextBoxColumn.MinimumWidth = 100;
             this.purposeNameDataGridViewTextBoxColumn.Name = "purposeNameDataGridViewTextBoxColumn";
             // 
+            // purposeBindingSource
+            // 
+            this.purposeBindingSource.DataMember = "purpose";
+            this.purposeBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // purposeTableAdapter
+            // 
+            this.purposeTableAdapter.ClearBeforeFill = true;
+            // 
             // FormPropoise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPropoise";
             this.Text = "Цели хранения";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPropoise_FormClosed);
             this.Load += new System.EventHandler(this.FormPropoise_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

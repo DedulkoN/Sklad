@@ -12,8 +12,17 @@ namespace Sklad
 {
     public partial class FormMain : Form
     {
+        private int UserRoleID = 0;
+        private int UserID = 0;
         public FormMain()
         {
+            FormLogin fl = new FormLogin();
+            if( fl.ShowDialog() == DialogResult.OK)
+            {
+                UserRoleID = fl.UserRoleID;
+                UserID = fl.UserID;
+            }
+            else { Application.Exit(); }
             InitializeComponent();
             panel1.Visible = false;
         }
@@ -37,9 +46,13 @@ namespace Sklad
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            Validate();
-            materialsBindingSource.EndEdit();
-            materialsTableAdapter.Update(skladDataSet.Materials);
+            try
+            {
+                Validate();
+                materialsBindingSource.EndEdit();
+                materialsTableAdapter.Update(skladDataSet.Materials);
+            }
+            catch { }
         }
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -111,6 +124,54 @@ namespace Sklad
             {
                 this.purposeTableAdapter.Fill(this.skladDataSet.purpose);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
+        }
+
+        private void отобразитьПанельФильтровToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string Filtr = "";
+            if (checkBoxName.Checked)
+            {
+                Filtr = string.Format( " [NameMaterial] like '%{0}%'", textBoxName.Text);
+            }
+            if(checkBoxTypeMaterials.Checked)
+            {
+
+                if(Filtr == "")
+                { Filtr = string.Format(" [TypeMaterialID] = {0}", comboBoxTypeMaterials.SelectedValue); }
+                else { Filtr += string.Format(" and [TypeMaterialID] = {0}", comboBoxTypeMaterials.SelectedValue); }
+            }
+            if(checkBoxDepartement.Checked)
+            {
+                if (Filtr == "")
+                { Filtr = string.Format(" [DepartamentID] = {0}", comboBoxDepartement.SelectedValue); }
+                else { Filtr += string.Format(" and [DepartamentID] = {0}", comboBoxDepartement.SelectedValue); }
+
+            }
+            if(checkBoxStellaz.Checked)
+            {
+                if (Filtr == "")
+                { Filtr = string.Format(" [StellazhID] = {0}", comboBoxStellaz.SelectedValue); }
+                else { Filtr += string.Format(" and [StellazhID] = {0}", comboBoxStellaz.SelectedValue); }
+
+            }
+            materialsBindingSource.Filter = Filtr;
+
+        }
+
+        private void панельАдминистратораToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAdminPanel formAdminPanel = new FormAdminPanel();
+            formAdminPanel.Show();
         }
     }
 }

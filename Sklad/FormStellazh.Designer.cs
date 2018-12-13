@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStellazh));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
             this.stellazhIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stellaxzNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
+            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -56,20 +57,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stellazhBindingSource
-            // 
-            this.stellazhBindingSource.DataMember = "Stellazh";
-            this.stellazhBindingSource.DataSource = this.skladDataSet;
-            // 
-            // stellazhTableAdapter
-            // 
-            this.stellazhTableAdapter.ClearBeforeFill = true;
-            // 
             // stellazhIDDataGridViewTextBoxColumn
             // 
             this.stellazhIDDataGridViewTextBoxColumn.DataPropertyName = "StellazhID";
@@ -85,19 +72,34 @@
             this.stellaxzNameDataGridViewTextBoxColumn.HeaderText = "Имя стеллажа";
             this.stellaxzNameDataGridViewTextBoxColumn.Name = "stellaxzNameDataGridViewTextBoxColumn";
             // 
+            // stellazhBindingSource
+            // 
+            this.stellazhBindingSource.DataMember = "Stellazh";
+            this.stellazhBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stellazhTableAdapter
+            // 
+            this.stellazhTableAdapter.ClearBeforeFill = true;
+            // 
             // FormStellazh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStellazh";
-            this.Text = "FormStellazh";
+            this.Text = "Стеллажи";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormStellazh_FormClosed);
             this.Load += new System.EventHandler(this.FormStellazh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crypt.cs" />
     <Compile Include="Departament.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrder.Designer.cs">
+      <DependentUpon>FormOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPolka.cs">
       <SubType>Form</SubType>
@@ -160,8 +167,14 @@
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAdminPanel.resx">
+      <DependentUpon>FormAdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDepartament.resx">
       <DependentUpon>FormDepartament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
