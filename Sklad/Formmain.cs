@@ -22,8 +22,13 @@ namespace Sklad
                 UserRoleID = fl.UserRoleID;
                 UserID = fl.UserID;
             }
-            else { Application.Exit(); }
+            else
+            {
+                this.Close();
+                Application.Exit();
+            }
             InitializeComponent();
+            if (UserRoleID != 1) панельАдминистратораToolStripMenuItem.Visible = false;
             panel1.Visible = false;
         }
 
@@ -172,6 +177,17 @@ namespace Sklad
         {
             FormAdminPanel formAdminPanel = new FormAdminPanel();
             formAdminPanel.Show();
+        }
+
+        private void ордераToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormOrder formOrder = new FormOrder((short)UserID);
+            formOrder.Show();
+        }
+
+        private void dsuhepbnmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToOffice.ExportToExcel(dataGridView1);
         }
     }
 }

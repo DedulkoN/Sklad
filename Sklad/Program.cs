@@ -16,7 +16,11 @@ namespace Sklad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            try
+            {
+                Application.Run(new FormMain());
+            }
+            catch { }
         }
     }
 }
