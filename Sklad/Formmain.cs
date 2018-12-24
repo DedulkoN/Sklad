@@ -29,7 +29,7 @@ namespace Sklad
             }
             InitializeComponent();
             if (UserRoleID != 1) панельАдминистратораToolStripMenuItem.Visible = false;
-            panel1.Visible = false;
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,15 +131,6 @@ namespace Sklad
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = false;
-        }
-
-        private void отобразитьПанельФильтровToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            panel1.Visible = true;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -188,6 +179,31 @@ namespace Sklad
         private void dsuhepbnmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToOffice.ExportToExcel(dataGridView1);
+        }
+
+
+
+        private void удалитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Удалить выделенную строку?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
+                Validate();
+                materialsBindingSource.EndEdit();
+                materialsTableAdapter.Update(skladDataSet.Materials);
+            }            
+           
+        }
+
+        private void обновитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
+        }
+
+        private void редактироватьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.BeginEdit(true);
         }
     }
 }
