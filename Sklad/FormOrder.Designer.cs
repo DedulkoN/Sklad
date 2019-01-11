@@ -45,6 +45,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.добавитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отобразитьскрытьПанельФильтровToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выгрузитьДанныеВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersTableAdapter = new Sklad.SkladDataSetTableAdapters.OrdersTableAdapter();
             this.typeOrdersTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeOrdersTableAdapter();
@@ -75,7 +76,8 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBoxFiltrType = new System.Windows.Forms.ComboBox();
             this.checkBoxType = new System.Windows.Forms.CheckBox();
-            this.выгрузитьДанныеВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.dSuhepbnmLfyystToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
@@ -212,9 +214,11 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьЗаписьToolStripMenuItem,
             this.отобразитьскрытьПанельФильтровToolStripMenuItem,
-            this.выгрузитьДанныеВExcelToolStripMenuItem});
+            this.toolStripSeparator1,
+            this.выгрузитьДанныеВExcelToolStripMenuItem,
+            this.dSuhepbnmLfyystToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(282, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(282, 120);
             // 
             // добавитьЗаписьToolStripMenuItem
             // 
@@ -229,6 +233,13 @@
             this.отобразитьскрытьПанельФильтровToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
             this.отобразитьскрытьПанельФильтровToolStripMenuItem.Text = "Отобразить/скрыть панель фильтров";
             this.отобразитьскрытьПанельФильтровToolStripMenuItem.Click += new System.EventHandler(this.отобразитьскрытьПанельФильтровToolStripMenuItem_Click);
+            // 
+            // выгрузитьДанныеВExcelToolStripMenuItem
+            // 
+            this.выгрузитьДанныеВExcelToolStripMenuItem.Name = "выгрузитьДанныеВExcelToolStripMenuItem";
+            this.выгрузитьДанныеВExcelToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
+            this.выгрузитьДанныеВExcelToolStripMenuItem.Text = "Выгрузить данные в Excel";
+            this.выгрузитьДанныеВExcelToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВExcelToolStripMenuItem_Click);
             // 
             // ordersBindingSource
             // 
@@ -516,12 +527,18 @@
             this.checkBoxType.Text = "Активен";
             this.checkBoxType.UseVisualStyleBackColor = true;
             // 
-            // выгрузитьДанныеВExcelToolStripMenuItem
+            // toolStripSeparator1
             // 
-            this.выгрузитьДанныеВExcelToolStripMenuItem.Name = "выгрузитьДанныеВExcelToolStripMenuItem";
-            this.выгрузитьДанныеВExcelToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
-            this.выгрузитьДанныеВExcelToolStripMenuItem.Text = "Выгрузить данные в Excel";
-            this.выгрузитьДанныеВExcelToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВExcelToolStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(278, 6);
+            this.toolStripSeparator1.Click += new System.EventHandler(this.toolStripSeparator1_Click);
+            // 
+            // dSuhepbnmLfyystToolStripMenuItem
+            // 
+            this.dSuhepbnmLfyystToolStripMenuItem.Name = "dSuhepbnmLfyystToolStripMenuItem";
+            this.dSuhepbnmLfyystToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
+            this.dSuhepbnmLfyystToolStripMenuItem.Text = "Выгрузить данные в Word";
+            this.dSuhepbnmLfyystToolStripMenuItem.Click += new System.EventHandler(this.dSuhepbnmLfyystToolStripMenuItem_Click);
             // 
             // FormOrder
             // 
@@ -608,5 +625,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn whoCreateOrderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn infoDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem выгрузитьДанныеВExcelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem dSuhepbnmLfyystToolStripMenuItem;
     }
 }

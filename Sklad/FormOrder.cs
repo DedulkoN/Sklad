@@ -128,5 +128,15 @@ namespace Sklad
         {
             ToOffice.ExportToExcel(dataGridView1);
         }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dSuhepbnmLfyystToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToOffice.ExportToWord(dataGridView1);
+        }
     }
 }

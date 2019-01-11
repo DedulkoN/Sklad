@@ -205,5 +205,10 @@ namespace Sklad
         {
             dataGridView1.BeginEdit(true);
         }
+
+        private void выгрузитьДанныеВWordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToOffice.ExportToWord(dataGridView1);
+        }
     }
 }
