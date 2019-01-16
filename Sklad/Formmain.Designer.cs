@@ -50,6 +50,7 @@
             this.удалитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dsuhepbnmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выгрузитьДанныеВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialsTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialsTableAdapter();
             this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
@@ -82,7 +83,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.выгрузитьДанныеВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
@@ -238,7 +238,7 @@
             this.dsuhepbnmToolStripMenuItem,
             this.выгрузитьДанныеВWordToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 142);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 120);
             // 
             // обновитьToolStripMenuItem
             // 
@@ -272,6 +272,13 @@
             this.dsuhepbnmToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.dsuhepbnmToolStripMenuItem.Text = "Выгрузить данные в Excel";
             this.dsuhepbnmToolStripMenuItem.Click += new System.EventHandler(this.dsuhepbnmToolStripMenuItem_Click);
+            // 
+            // выгрузитьДанныеВWordToolStripMenuItem
+            // 
+            this.выгрузитьДанныеВWordToolStripMenuItem.Name = "выгрузитьДанныеВWordToolStripMenuItem";
+            this.выгрузитьДанныеВWordToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.выгрузитьДанныеВWordToolStripMenuItem.Text = "Выгрузить данные в Word";
+            this.выгрузитьДанныеВWordToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВWordToolStripMenuItem_Click);
             // 
             // materialsBindingSource
             // 
@@ -400,7 +407,7 @@
             // comboBoxStellaz
             // 
             this.comboBoxStellaz.DataSource = this.stellazhBindingSource;
-            this.comboBoxStellaz.DisplayMember = "StellazhID";
+            this.comboBoxStellaz.DisplayMember = "StellaxzName";
             this.comboBoxStellaz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxStellaz.FormattingEnabled = true;
             this.comboBoxStellaz.Location = new System.Drawing.Point(7, 44);
@@ -549,13 +556,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Фильтры";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // выгрузитьДанныеВWordToolStripMenuItem
-            // 
-            this.выгрузитьДанныеВWordToolStripMenuItem.Name = "выгрузитьДанныеВWordToolStripMenuItem";
-            this.выгрузитьДанныеВWordToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.выгрузитьДанныеВWordToolStripMenuItem.Text = "Выгрузить данные в Word";
-            this.выгрузитьДанныеВWordToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВWordToolStripMenuItem_Click);
             // 
             // FormMain
             // 
