@@ -56,8 +56,8 @@ namespace Sklad
             try
             {
                 Validate();
-                materialsBindingSource.EndEdit();
-                materialsTableAdapter.Update(skladDataSet.Materials);
+                materialForShelfBindingSource.EndEdit();
+                materialForShelfTableAdapter.Update(skladDataSet.MaterialForShelf);
             }
             catch { }
         }
@@ -78,8 +78,8 @@ namespace Sklad
             if (MessageBox.Show("Удалить выделенную строку?", "Вопрос", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Validate();
-                materialsBindingSource.EndEdit();
-                materialsTableAdapter.Update(skladDataSet.Materials);
+                materialForShelfBindingSource.EndEdit();
+                materialForShelfTableAdapter.Update(skladDataSet.MaterialForShelf);
             }
         }
 
