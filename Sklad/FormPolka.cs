@@ -19,6 +19,8 @@ namespace Sklad
 
         private void FormPolka_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.Stellazh". При необходимости она может быть перемещена или удалена.
+            this.stellazhTableAdapter.Fill(this.skladDataSet.Stellazh);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.Shelf". При необходимости она может быть перемещена или удалена.
             this.shelfTableAdapter.Fill(this.skladDataSet.Shelf);
 

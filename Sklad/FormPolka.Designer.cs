@@ -31,14 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPolka));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
             this.shelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
             this.shelfTableAdapter = new Sklad.SkladDataSetTableAdapters.ShelfTableAdapter();
+            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
             this.shelfIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shelfNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StellazhID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -47,7 +51,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.shelfIDDataGridViewTextBoxColumn,
-            this.shelfNameDataGridViewTextBoxColumn});
+            this.shelfNameDataGridViewTextBoxColumn,
+            this.StellazhID});
             this.dataGridView1.DataSource = this.shelfBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -58,19 +63,28 @@
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // shelfBindingSource
             // 
             this.shelfBindingSource.DataMember = "Shelf";
             this.shelfBindingSource.DataSource = this.skladDataSet;
             // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // shelfTableAdapter
             // 
             this.shelfTableAdapter.ClearBeforeFill = true;
+            // 
+            // stellazhBindingSource
+            // 
+            this.stellazhBindingSource.DataMember = "Stellazh";
+            this.stellazhBindingSource.DataSource = this.skladDataSet;
+            // 
+            // stellazhTableAdapter
+            // 
+            this.stellazhTableAdapter.ClearBeforeFill = true;
             // 
             // shelfIDDataGridViewTextBoxColumn
             // 
@@ -87,6 +101,15 @@
             this.shelfNameDataGridViewTextBoxColumn.HeaderText = "Название полки";
             this.shelfNameDataGridViewTextBoxColumn.Name = "shelfNameDataGridViewTextBoxColumn";
             // 
+            // StellazhID
+            // 
+            this.StellazhID.DataPropertyName = "StellazhID";
+            this.StellazhID.DataSource = this.stellazhBindingSource;
+            this.StellazhID.DisplayMember = "StellaxzName";
+            this.StellazhID.HeaderText = "Стеллаж";
+            this.StellazhID.Name = "StellazhID";
+            this.StellazhID.ValueMember = "StellazhID";
+            // 
             // FormPolka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,8 +122,9 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPolka_FormClosed);
             this.Load += new System.EventHandler(this.FormPolka_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,7 +135,10 @@
         private SkladDataSet skladDataSet;
         private System.Windows.Forms.BindingSource shelfBindingSource;
         private SkladDataSetTableAdapters.ShelfTableAdapter shelfTableAdapter;
+        private System.Windows.Forms.BindingSource stellazhBindingSource;
+        private SkladDataSetTableAdapters.StellazhTableAdapter stellazhTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn shelfIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn shelfNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn StellazhID;
     }
 }

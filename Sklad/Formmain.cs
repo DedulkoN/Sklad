@@ -34,6 +34,8 @@ namespace Sklad
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.MaterialForShelf". При необходимости она может быть перемещена или удалена.
+            this.materialForShelfTableAdapter.Fill(this.skladDataSet.MaterialForShelf);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.purpose". При необходимости она может быть перемещена или удалена.
             this.purposeTableAdapter.Fill(this.skladDataSet.purpose);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.Shelf". При необходимости она может быть перемещена или удалена.
@@ -135,32 +137,23 @@ namespace Sklad
         private void button1_Click(object sender, EventArgs e)
         {
             string Filtr = "";
-            if (checkBoxName.Checked)
-            {
-                Filtr = string.Format( " [NameMaterial] like '%{0}%'", textBoxName.Text);
-            }
+           
             if(checkBoxTypeMaterials.Checked)
             {
 
                 if(Filtr == "")
-                { Filtr = string.Format(" [TypeMaterialID] = {0}", comboBoxTypeMaterials.SelectedValue); }
-                else { Filtr += string.Format(" and [TypeMaterialID] = {0}", comboBoxTypeMaterials.SelectedValue); }
+                { Filtr = string.Format(" [IdMaterial] = {0}", comboBoxTypeMaterials.SelectedValue); }
+                else { Filtr += string.Format(" and [IdMaterial] = {0}", comboBoxTypeMaterials.SelectedValue); }
             }
-            if(checkBoxDepartement.Checked)
-            {
-                if (Filtr == "")
-                { Filtr = string.Format(" [DepartamentID] = {0}", comboBoxDepartement.SelectedValue); }
-                else { Filtr += string.Format(" and [DepartamentID] = {0}", comboBoxDepartement.SelectedValue); }
-
-            }
+          
             if(checkBoxStellaz.Checked)
             {
                 if (Filtr == "")
-                { Filtr = string.Format(" [StellazhID] = {0}", comboBoxStellaz.SelectedValue); }
-                else { Filtr += string.Format(" and [StellazhID] = {0}", comboBoxStellaz.SelectedValue); }
+                { Filtr = string.Format(" [IdShelf] = {0}", comboBoxStellaz.SelectedValue); }
+                else { Filtr += string.Format(" and [IdShelf] = {0}", comboBoxStellaz.SelectedValue); }
 
             }
-            materialsBindingSource.Filter = Filtr;
+            materialForShelfBindingSource.Filter = Filtr;
 
         }
 
@@ -209,6 +202,15 @@ namespace Sklad
         private void выгрузитьДанныеВWordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToOffice.ExportToWord(dataGridView1);
+        }
+
+        private void материалыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Materials fm = new Materials();
+            if (fm.ShowDialog() == DialogResult.OK)
+            {
+                this.materialsTableAdapter.Fill(this.skladDataSet.Materials);
+            }
         }
     }
 }

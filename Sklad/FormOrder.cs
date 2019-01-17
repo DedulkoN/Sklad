@@ -49,7 +49,7 @@ namespace Sklad
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            ordersTableAdapter.Insert(Convert.ToInt16(comboBoxAddType.SelectedValue), dateTimePickerAdd.Value, Convert.ToInt16(comboBoxAddMaterial.SelectedValue), UserID, textBoxAddInfo.Text);
+            ordersTableAdapter.Insert(Convert.ToInt16(comboBoxAddType.SelectedValue), dateTimePickerAdd.Value, Convert.ToInt16(comboBoxAddMaterial.SelectedValue), UserID, textBoxAddInfo.Text, Convert.ToInt32( numericUpDownCount.Value), textBoxIzm.Text);
             ordersTableAdapter.Update(skladDataSet.Orders);
             ordersTableAdapter.Fill(skladDataSet.Orders);
             panel1.Visible = true;
