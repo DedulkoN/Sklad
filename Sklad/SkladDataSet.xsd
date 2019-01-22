@@ -653,6 +653,27 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_1TableAdapter" GeneratorDataComponentClassName="View_1TableAdapter" Name="View_1" UserDataComponentName="View_1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SkladConnectionString (Settings)" DbObjectName="Sklad.dbo.View_1" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, IdMaterial, Count, Izm, ShelfID, StellazhID FROM dbo.View_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="IdMaterial" DataSetColumn="IdMaterial" />
+              <Mapping SourceColumn="Count" DataSetColumn="Count" />
+              <Mapping SourceColumn="Izm" DataSetColumn="Izm" />
+              <Mapping SourceColumn="ShelfID" DataSetColumn="ShelfID" />
+              <Mapping SourceColumn="StellazhID" DataSetColumn="StellazhID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -661,7 +682,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
   <xs:element name="SkladDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SkladDataSet" msprop:Generator_UserDSName="SkladDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Departament" msprop:Generator_TableClassName="DepartamentDataTable" msprop:Generator_TableVarName="tableDepartament" msprop:Generator_RowChangedName="DepartamentRowChanged" msprop:Generator_TablePropName="Departament" msprop:Generator_RowDeletingName="DepartamentRowDeleting" msprop:Generator_RowChangingName="DepartamentRowChanging" msprop:Generator_RowEvHandlerName="DepartamentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartamentRowDeleted" msprop:Generator_RowClassName="DepartamentRow" msprop:Generator_UserTableName="Departament" msprop:Generator_RowEvArgName="DepartamentRowChangeEvent">
+        <xs:element name="Departament" msprop:Generator_TableClassName="DepartamentDataTable" msprop:Generator_TableVarName="tableDepartament" msprop:Generator_TablePropName="Departament" msprop:Generator_RowDeletingName="DepartamentRowDeleting" msprop:Generator_RowChangingName="DepartamentRowChanging" msprop:Generator_RowEvHandlerName="DepartamentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartamentRowDeleted" msprop:Generator_UserTableName="Departament" msprop:Generator_RowChangedName="DepartamentRowChanged" msprop:Generator_RowEvArgName="DepartamentRowChangeEvent" msprop:Generator_RowClassName="DepartamentRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DepartamentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnDepartamentID" msprop:Generator_ColumnPropNameInRow="DepartamentID" msprop:Generator_ColumnPropNameInTable="DepartamentIDColumn" msprop:Generator_UserColumnName="DepartamentID" type="xs:short" />
@@ -689,7 +710,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="purpose" msprop:Generator_TableClassName="purposeDataTable" msprop:Generator_TableVarName="tablepurpose" msprop:Generator_RowChangedName="purposeRowChanged" msprop:Generator_TablePropName="purpose" msprop:Generator_RowDeletingName="purposeRowDeleting" msprop:Generator_RowChangingName="purposeRowChanging" msprop:Generator_RowEvHandlerName="purposeRowChangeEventHandler" msprop:Generator_RowDeletedName="purposeRowDeleted" msprop:Generator_RowClassName="purposeRow" msprop:Generator_UserTableName="purpose" msprop:Generator_RowEvArgName="purposeRowChangeEvent">
+        <xs:element name="purpose" msprop:Generator_TableClassName="purposeDataTable" msprop:Generator_TableVarName="tablepurpose" msprop:Generator_TablePropName="purpose" msprop:Generator_RowDeletingName="purposeRowDeleting" msprop:Generator_RowChangingName="purposeRowChanging" msprop:Generator_RowEvHandlerName="purposeRowChangeEventHandler" msprop:Generator_RowDeletedName="purposeRowDeleted" msprop:Generator_UserTableName="purpose" msprop:Generator_RowChangedName="purposeRowChanged" msprop:Generator_RowEvArgName="purposeRowChangeEvent" msprop:Generator_RowClassName="purposeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="purposeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnpurposeID" msprop:Generator_ColumnPropNameInRow="purposeID" msprop:Generator_ColumnPropNameInTable="purposeIDColumn" msprop:Generator_UserColumnName="purposeID" type="xs:short" />
@@ -703,7 +724,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RoleUsers" msprop:Generator_TableClassName="RoleUsersDataTable" msprop:Generator_TableVarName="tableRoleUsers" msprop:Generator_RowChangedName="RoleUsersRowChanged" msprop:Generator_TablePropName="RoleUsers" msprop:Generator_RowDeletingName="RoleUsersRowDeleting" msprop:Generator_RowChangingName="RoleUsersRowChanging" msprop:Generator_RowEvHandlerName="RoleUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="RoleUsersRowDeleted" msprop:Generator_RowClassName="RoleUsersRow" msprop:Generator_UserTableName="RoleUsers" msprop:Generator_RowEvArgName="RoleUsersRowChangeEvent">
+        <xs:element name="RoleUsers" msprop:Generator_TableClassName="RoleUsersDataTable" msprop:Generator_TableVarName="tableRoleUsers" msprop:Generator_TablePropName="RoleUsers" msprop:Generator_RowDeletingName="RoleUsersRowDeleting" msprop:Generator_RowChangingName="RoleUsersRowChanging" msprop:Generator_RowEvHandlerName="RoleUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="RoleUsersRowDeleted" msprop:Generator_UserTableName="RoleUsers" msprop:Generator_RowChangedName="RoleUsersRowChanged" msprop:Generator_RowEvArgName="RoleUsersRowChangeEvent" msprop:Generator_RowClassName="RoleUsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="RoleUserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnRoleUserID" msprop:Generator_ColumnPropNameInRow="RoleUserID" msprop:Generator_ColumnPropNameInTable="RoleUserIDColumn" msprop:Generator_UserColumnName="RoleUserID" type="xs:short" />
@@ -717,7 +738,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Stellazh" msprop:Generator_TableClassName="StellazhDataTable" msprop:Generator_TableVarName="tableStellazh" msprop:Generator_RowChangedName="StellazhRowChanged" msprop:Generator_TablePropName="Stellazh" msprop:Generator_RowDeletingName="StellazhRowDeleting" msprop:Generator_RowChangingName="StellazhRowChanging" msprop:Generator_RowEvHandlerName="StellazhRowChangeEventHandler" msprop:Generator_RowDeletedName="StellazhRowDeleted" msprop:Generator_RowClassName="StellazhRow" msprop:Generator_UserTableName="Stellazh" msprop:Generator_RowEvArgName="StellazhRowChangeEvent">
+        <xs:element name="Stellazh" msprop:Generator_TableClassName="StellazhDataTable" msprop:Generator_TableVarName="tableStellazh" msprop:Generator_TablePropName="Stellazh" msprop:Generator_RowDeletingName="StellazhRowDeleting" msprop:Generator_RowChangingName="StellazhRowChanging" msprop:Generator_RowEvHandlerName="StellazhRowChangeEventHandler" msprop:Generator_RowDeletedName="StellazhRowDeleted" msprop:Generator_UserTableName="Stellazh" msprop:Generator_RowChangedName="StellazhRowChanged" msprop:Generator_RowEvArgName="StellazhRowChangeEvent" msprop:Generator_RowClassName="StellazhRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StellazhID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnStellazhID" msprop:Generator_ColumnPropNameInRow="StellazhID" msprop:Generator_ColumnPropNameInTable="StellazhIDColumn" msprop:Generator_UserColumnName="StellazhID" type="xs:short" />
@@ -731,7 +752,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TypeMaterial" msprop:Generator_TableClassName="TypeMaterialDataTable" msprop:Generator_TableVarName="tableTypeMaterial" msprop:Generator_RowChangedName="TypeMaterialRowChanged" msprop:Generator_TablePropName="TypeMaterial" msprop:Generator_RowDeletingName="TypeMaterialRowDeleting" msprop:Generator_RowChangingName="TypeMaterialRowChanging" msprop:Generator_RowEvHandlerName="TypeMaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeMaterialRowDeleted" msprop:Generator_RowClassName="TypeMaterialRow" msprop:Generator_UserTableName="TypeMaterial" msprop:Generator_RowEvArgName="TypeMaterialRowChangeEvent">
+        <xs:element name="TypeMaterial" msprop:Generator_TableClassName="TypeMaterialDataTable" msprop:Generator_TableVarName="tableTypeMaterial" msprop:Generator_TablePropName="TypeMaterial" msprop:Generator_RowDeletingName="TypeMaterialRowDeleting" msprop:Generator_RowChangingName="TypeMaterialRowChanging" msprop:Generator_RowEvHandlerName="TypeMaterialRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeMaterialRowDeleted" msprop:Generator_UserTableName="TypeMaterial" msprop:Generator_RowChangedName="TypeMaterialRowChanged" msprop:Generator_RowEvArgName="TypeMaterialRowChangeEvent" msprop:Generator_RowClassName="TypeMaterialRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TypeID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTypeID" msprop:Generator_ColumnPropNameInRow="TypeID" msprop:Generator_ColumnPropNameInTable="TypeIDColumn" msprop:Generator_UserColumnName="TypeID" type="xs:short" />
@@ -745,7 +766,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TypeOrders" msprop:Generator_TableClassName="TypeOrdersDataTable" msprop:Generator_TableVarName="tableTypeOrders" msprop:Generator_RowChangedName="TypeOrdersRowChanged" msprop:Generator_TablePropName="TypeOrders" msprop:Generator_RowDeletingName="TypeOrdersRowDeleting" msprop:Generator_RowChangingName="TypeOrdersRowChanging" msprop:Generator_RowEvHandlerName="TypeOrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeOrdersRowDeleted" msprop:Generator_RowClassName="TypeOrdersRow" msprop:Generator_UserTableName="TypeOrders" msprop:Generator_RowEvArgName="TypeOrdersRowChangeEvent">
+        <xs:element name="TypeOrders" msprop:Generator_TableClassName="TypeOrdersDataTable" msprop:Generator_TableVarName="tableTypeOrders" msprop:Generator_TablePropName="TypeOrders" msprop:Generator_RowDeletingName="TypeOrdersRowDeleting" msprop:Generator_RowChangingName="TypeOrdersRowChanging" msprop:Generator_RowEvHandlerName="TypeOrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeOrdersRowDeleted" msprop:Generator_UserTableName="TypeOrders" msprop:Generator_RowChangedName="TypeOrdersRowChanged" msprop:Generator_RowEvArgName="TypeOrdersRowChangeEvent" msprop:Generator_RowClassName="TypeOrdersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TypeOrdersID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTypeOrdersID" msprop:Generator_ColumnPropNameInRow="TypeOrdersID" msprop:Generator_ColumnPropNameInTable="TypeOrdersIDColumn" msprop:Generator_UserColumnName="TypeOrdersID" type="xs:short" />
@@ -759,7 +780,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UsersID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUsersID" msprop:Generator_ColumnPropNameInRow="UsersID" msprop:Generator_ColumnPropNameInTable="UsersIDColumn" msprop:Generator_UserColumnName="UsersID" type="xs:short" />
@@ -795,7 +816,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MaterialForShelf" msprop:Generator_TableClassName="MaterialForShelfDataTable" msprop:Generator_TableVarName="tableMaterialForShelf" msprop:Generator_TablePropName="MaterialForShelf" msprop:Generator_RowDeletingName="MaterialForShelfRowDeleting" msprop:Generator_RowChangingName="MaterialForShelfRowChanging" msprop:Generator_RowEvHandlerName="MaterialForShelfRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialForShelfRowDeleted" msprop:Generator_UserTableName="MaterialForShelf" msprop:Generator_RowChangedName="MaterialForShelfRowChanged" msprop:Generator_RowEvArgName="MaterialForShelfRowChangeEvent" msprop:Generator_RowClassName="MaterialForShelfRow">
+        <xs:element name="MaterialForShelf" msprop:Generator_TableClassName="MaterialForShelfDataTable" msprop:Generator_TableVarName="tableMaterialForShelf" msprop:Generator_RowChangedName="MaterialForShelfRowChanged" msprop:Generator_TablePropName="MaterialForShelf" msprop:Generator_RowDeletingName="MaterialForShelfRowDeleting" msprop:Generator_RowChangingName="MaterialForShelfRowChanging" msprop:Generator_RowEvHandlerName="MaterialForShelfRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialForShelfRowDeleted" msprop:Generator_RowClassName="MaterialForShelfRow" msprop:Generator_UserTableName="MaterialForShelf" msprop:Generator_RowEvArgName="MaterialForShelfRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:short" />
@@ -812,7 +833,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Materials" msprop:Generator_TableClassName="MaterialsDataTable" msprop:Generator_TableVarName="tableMaterials" msprop:Generator_TablePropName="Materials" msprop:Generator_RowDeletingName="MaterialsRowDeleting" msprop:Generator_RowChangingName="MaterialsRowChanging" msprop:Generator_RowEvHandlerName="MaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialsRowDeleted" msprop:Generator_UserTableName="Materials" msprop:Generator_RowChangedName="MaterialsRowChanged" msprop:Generator_RowEvArgName="MaterialsRowChangeEvent" msprop:Generator_RowClassName="MaterialsRow">
+        <xs:element name="Materials" msprop:Generator_TableClassName="MaterialsDataTable" msprop:Generator_TableVarName="tableMaterials" msprop:Generator_RowChangedName="MaterialsRowChanged" msprop:Generator_TablePropName="Materials" msprop:Generator_RowDeletingName="MaterialsRowDeleting" msprop:Generator_RowChangingName="MaterialsRowChanging" msprop:Generator_RowEvHandlerName="MaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="MaterialsRowDeleted" msprop:Generator_RowClassName="MaterialsRow" msprop:Generator_UserTableName="Materials" msprop:Generator_RowEvArgName="MaterialsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaterialsID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaterialsID" msprop:Generator_ColumnPropNameInRow="MaterialsID" msprop:Generator_ColumnPropNameInTable="MaterialsIDColumn" msprop:Generator_UserColumnName="MaterialsID" type="xs:short" />
@@ -829,7 +850,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Orders" msprop:Generator_TableClassName="OrdersDataTable" msprop:Generator_TableVarName="tableOrders" msprop:Generator_TablePropName="Orders" msprop:Generator_RowDeletingName="OrdersRowDeleting" msprop:Generator_RowChangingName="OrdersRowChanging" msprop:Generator_RowEvHandlerName="OrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdersRowDeleted" msprop:Generator_UserTableName="Orders" msprop:Generator_RowChangedName="OrdersRowChanged" msprop:Generator_RowEvArgName="OrdersRowChangeEvent" msprop:Generator_RowClassName="OrdersRow">
+        <xs:element name="Orders" msprop:Generator_TableClassName="OrdersDataTable" msprop:Generator_TableVarName="tableOrders" msprop:Generator_RowChangedName="OrdersRowChanged" msprop:Generator_TablePropName="Orders" msprop:Generator_RowDeletingName="OrdersRowDeleting" msprop:Generator_RowChangingName="OrdersRowChanging" msprop:Generator_RowEvHandlerName="OrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdersRowDeleted" msprop:Generator_RowClassName="OrdersRow" msprop:Generator_UserTableName="Orders" msprop:Generator_RowEvArgName="OrdersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OrdersID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnOrdersID" msprop:Generator_ColumnPropNameInRow="OrdersID" msprop:Generator_ColumnPropNameInTable="OrdersIDColumn" msprop:Generator_UserColumnName="OrdersID" type="xs:short" />
@@ -855,7 +876,7 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Shelf" msprop:Generator_TableClassName="ShelfDataTable" msprop:Generator_TableVarName="tableShelf" msprop:Generator_TablePropName="Shelf" msprop:Generator_RowDeletingName="ShelfRowDeleting" msprop:Generator_RowChangingName="ShelfRowChanging" msprop:Generator_RowEvHandlerName="ShelfRowChangeEventHandler" msprop:Generator_RowDeletedName="ShelfRowDeleted" msprop:Generator_UserTableName="Shelf" msprop:Generator_RowChangedName="ShelfRowChanged" msprop:Generator_RowEvArgName="ShelfRowChangeEvent" msprop:Generator_RowClassName="ShelfRow">
+        <xs:element name="Shelf" msprop:Generator_TableClassName="ShelfDataTable" msprop:Generator_TableVarName="tableShelf" msprop:Generator_RowChangedName="ShelfRowChanged" msprop:Generator_TablePropName="Shelf" msprop:Generator_RowDeletingName="ShelfRowDeleting" msprop:Generator_RowChangingName="ShelfRowChanging" msprop:Generator_RowEvHandlerName="ShelfRowChangeEventHandler" msprop:Generator_RowDeletedName="ShelfRowDeleted" msprop:Generator_RowClassName="ShelfRow" msprop:Generator_UserTableName="Shelf" msprop:Generator_RowEvArgName="ShelfRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ShelfID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnShelfID" msprop:Generator_ColumnPropNameInRow="ShelfID" msprop:Generator_ColumnPropNameInTable="ShelfIDColumn" msprop:Generator_UserColumnName="ShelfID" type="xs:short" />
@@ -866,6 +887,24 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="StellazhID" msprop:Generator_ColumnVarNameInTable="columnStellazhID" msprop:Generator_ColumnPropNameInRow="StellazhID" msprop:Generator_ColumnPropNameInTable="StellazhIDColumn" msprop:Generator_UserColumnName="StellazhID" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_1" msprop:Generator_TableClassName="View_1DataTable" msprop:Generator_TableVarName="tableView_1" msprop:Generator_TablePropName="View_1" msprop:Generator_RowDeletingName="View_1RowDeleting" msprop:Generator_RowChangingName="View_1RowChanging" msprop:Generator_RowEvHandlerName="View_1RowChangeEventHandler" msprop:Generator_RowDeletedName="View_1RowDeleted" msprop:Generator_UserTableName="View_1" msprop:Generator_RowChangedName="View_1RowChanged" msprop:Generator_RowEvArgName="View_1RowChangeEvent" msprop:Generator_RowClassName="View_1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:short" />
+              <xs:element name="IdMaterial" msprop:Generator_ColumnVarNameInTable="columnIdMaterial" msprop:Generator_ColumnPropNameInRow="IdMaterial" msprop:Generator_ColumnPropNameInTable="IdMaterialColumn" msprop:Generator_UserColumnName="IdMaterial" type="xs:short" minOccurs="0" />
+              <xs:element name="Count" msprop:Generator_ColumnVarNameInTable="columnCount" msprop:Generator_ColumnPropNameInRow="Count" msprop:Generator_ColumnPropNameInTable="CountColumn" msprop:Generator_UserColumnName="Count" type="xs:int" minOccurs="0" />
+              <xs:element name="Izm" msprop:Generator_ColumnVarNameInTable="columnIzm" msprop:Generator_ColumnPropNameInRow="Izm" msprop:Generator_ColumnPropNameInTable="IzmColumn" msprop:Generator_UserColumnName="Izm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShelfID" msprop:Generator_ColumnVarNameInTable="columnShelfID" msprop:Generator_ColumnPropNameInRow="ShelfID" msprop:Generator_ColumnPropNameInTable="ShelfIDColumn" msprop:Generator_UserColumnName="ShelfID" type="xs:short" />
               <xs:element name="StellazhID" msprop:Generator_ColumnVarNameInTable="columnStellazhID" msprop:Generator_ColumnPropNameInRow="StellazhID" msprop:Generator_ColumnPropNameInTable="StellazhIDColumn" msprop:Generator_UserColumnName="StellazhID" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -916,19 +955,24 @@ SELECT ShelfID, ShelfName, StellazhID FROM Shelf WHERE (ShelfID = @ShelfID)</Com
       <xs:selector xpath=".//mstns:Shelf" />
       <xs:field xpath="mstns:ShelfID" />
     </xs:unique>
+    <xs:unique name="View_1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_1" />
+      <xs:field xpath="mstns:id" />
+      <xs:field xpath="mstns:ShelfID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Users__RolesUser__0519C6AF" msdata:parent="RoleUsers" msdata:child="Users" msdata:parentkey="RoleUserID" msdata:childkey="RolesUser" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="FK__Users__RolesUser__0519C6AF" msprop:Generator_RelationVarName="relationFK__Users__RolesUser__0519C6AF" msprop:Generator_UserParentTable="RoleUsers" msprop:Generator_ParentPropName="RoleUsersRow" />
-      <msdata:Relationship name="FK_MaterialForShelf_Materials" msdata:parent="Materials" msdata:child="MaterialForShelf" msdata:parentkey="MaterialsID" msdata:childkey="IdMaterial" msprop:Generator_UserChildTable="MaterialForShelf" msprop:Generator_ChildPropName="GetMaterialForShelfRows" msprop:Generator_UserRelationName="FK_MaterialForShelf_Materials" msprop:Generator_RelationVarName="relationFK_MaterialForShelf_Materials" msprop:Generator_UserParentTable="Materials" msprop:Generator_ParentPropName="MaterialsRow" />
-      <msdata:Relationship name="FK__Materials__Depar__1DE57479" msdata:parent="Departament" msdata:child="Materials" msdata:parentkey="DepartamentID" msdata:childkey="DepartamentID" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="FK__Materials__Depar__1DE57479" msprop:Generator_ParentPropName="DepartamentRow" msprop:Generator_RelationVarName="relationFK__Materials__Depar__1DE57479" msprop:Generator_UserParentTable="Departament" />
-      <msdata:Relationship name="FK__Materials__purpo__20C1E124" msdata:parent="purpose" msdata:child="Materials" msdata:parentkey="purposeID" msdata:childkey="purposeID" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="FK__Materials__purpo__20C1E124" msprop:Generator_ParentPropName="purposeRow" msprop:Generator_RelationVarName="relationFK__Materials__purpo__20C1E124" msprop:Generator_UserParentTable="purpose" />
-      <msdata:Relationship name="FK__Materials__TypeM__1CF15040" msdata:parent="TypeMaterial" msdata:child="Materials" msdata:parentkey="TypeID" msdata:childkey="TypeMaterialID" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="FK__Materials__TypeM__1CF15040" msprop:Generator_ParentPropName="TypeMaterialRow" msprop:Generator_RelationVarName="relationFK__Materials__TypeM__1CF15040" msprop:Generator_UserParentTable="TypeMaterial" />
-      <msdata:Relationship name="FK__Orders__Material__2A4B4B5E" msdata:parent="Materials" msdata:child="Orders" msdata:parentkey="MaterialsID" msdata:childkey="MaterialId" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__Material__2A4B4B5E" msprop:Generator_ParentPropName="MaterialsRow" msprop:Generator_RelationVarName="relationFK__Orders__Material__2A4B4B5E" msprop:Generator_UserParentTable="Materials" />
-      <msdata:Relationship name="FK__Orders__TypeOrde__29572725" msdata:parent="TypeOrders" msdata:child="Orders" msdata:parentkey="TypeOrdersID" msdata:childkey="TypeOrdersID" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__TypeOrde__29572725" msprop:Generator_ParentPropName="TypeOrdersRow" msprop:Generator_RelationVarName="relationFK__Orders__TypeOrde__29572725" msprop:Generator_UserParentTable="TypeOrders" />
-      <msdata:Relationship name="FK__Orders__WhoCreat__2B3F6F97" msdata:parent="Users" msdata:child="Orders" msdata:parentkey="UsersID" msdata:childkey="WhoCreateOrder" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__WhoCreat__2B3F6F97" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_RelationVarName="relationFK__Orders__WhoCreat__2B3F6F97" msprop:Generator_UserParentTable="Users" />
-      <msdata:Relationship name="FK_MaterialForShelf_Shelf" msdata:parent="Shelf" msdata:child="MaterialForShelf" msdata:parentkey="ShelfID" msdata:childkey="IdShelf" msprop:Generator_UserChildTable="MaterialForShelf" msprop:Generator_ChildPropName="GetMaterialForShelfRows" msprop:Generator_UserRelationName="FK_MaterialForShelf_Shelf" msprop:Generator_RelationVarName="relationFK_MaterialForShelf_Shelf" msprop:Generator_UserParentTable="Shelf" msprop:Generator_ParentPropName="ShelfRow" />
-      <msdata:Relationship name="FK_Shelf_Stellazh" msdata:parent="Stellazh" msdata:child="Shelf" msdata:parentkey="StellazhID" msdata:childkey="StellazhID" msprop:Generator_UserChildTable="Shelf" msprop:Generator_ChildPropName="GetShelfRows" msprop:Generator_UserRelationName="FK_Shelf_Stellazh" msprop:Generator_ParentPropName="StellazhRow" msprop:Generator_RelationVarName="relationFK_Shelf_Stellazh" msprop:Generator_UserParentTable="Stellazh" />
+      <msdata:Relationship name="FK__Users__RolesUser__0519C6AF" msdata:parent="RoleUsers" msdata:child="Users" msdata:parentkey="RoleUserID" msdata:childkey="RolesUser" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="FK__Users__RolesUser__0519C6AF" msprop:Generator_ParentPropName="RoleUsersRow" msprop:Generator_RelationVarName="relationFK__Users__RolesUser__0519C6AF" msprop:Generator_UserParentTable="RoleUsers" />
+      <msdata:Relationship name="FK_MaterialForShelf_Materials" msdata:parent="Materials" msdata:child="MaterialForShelf" msdata:parentkey="MaterialsID" msdata:childkey="IdMaterial" msprop:Generator_UserChildTable="MaterialForShelf" msprop:Generator_ChildPropName="GetMaterialForShelfRows" msprop:Generator_UserRelationName="FK_MaterialForShelf_Materials" msprop:Generator_ParentPropName="MaterialsRow" msprop:Generator_RelationVarName="relationFK_MaterialForShelf_Materials" msprop:Generator_UserParentTable="Materials" />
+      <msdata:Relationship name="FK__Materials__Depar__1DE57479" msdata:parent="Departament" msdata:child="Materials" msdata:parentkey="DepartamentID" msdata:childkey="DepartamentID" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="FK__Materials__Depar__1DE57479" msprop:Generator_RelationVarName="relationFK__Materials__Depar__1DE57479" msprop:Generator_UserParentTable="Departament" msprop:Generator_ParentPropName="DepartamentRow" />
+      <msdata:Relationship name="FK__Materials__purpo__20C1E124" msdata:parent="purpose" msdata:child="Materials" msdata:parentkey="purposeID" msdata:childkey="purposeID" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="FK__Materials__purpo__20C1E124" msprop:Generator_RelationVarName="relationFK__Materials__purpo__20C1E124" msprop:Generator_UserParentTable="purpose" msprop:Generator_ParentPropName="purposeRow" />
+      <msdata:Relationship name="FK__Materials__TypeM__1CF15040" msdata:parent="TypeMaterial" msdata:child="Materials" msdata:parentkey="TypeID" msdata:childkey="TypeMaterialID" msprop:Generator_UserChildTable="Materials" msprop:Generator_ChildPropName="GetMaterialsRows" msprop:Generator_UserRelationName="FK__Materials__TypeM__1CF15040" msprop:Generator_RelationVarName="relationFK__Materials__TypeM__1CF15040" msprop:Generator_UserParentTable="TypeMaterial" msprop:Generator_ParentPropName="TypeMaterialRow" />
+      <msdata:Relationship name="FK__Orders__Material__2A4B4B5E" msdata:parent="Materials" msdata:child="Orders" msdata:parentkey="MaterialsID" msdata:childkey="MaterialId" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__Material__2A4B4B5E" msprop:Generator_RelationVarName="relationFK__Orders__Material__2A4B4B5E" msprop:Generator_UserParentTable="Materials" msprop:Generator_ParentPropName="MaterialsRow" />
+      <msdata:Relationship name="FK__Orders__TypeOrde__29572725" msdata:parent="TypeOrders" msdata:child="Orders" msdata:parentkey="TypeOrdersID" msdata:childkey="TypeOrdersID" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__TypeOrde__29572725" msprop:Generator_RelationVarName="relationFK__Orders__TypeOrde__29572725" msprop:Generator_UserParentTable="TypeOrders" msprop:Generator_ParentPropName="TypeOrdersRow" />
+      <msdata:Relationship name="FK__Orders__WhoCreat__2B3F6F97" msdata:parent="Users" msdata:child="Orders" msdata:parentkey="UsersID" msdata:childkey="WhoCreateOrder" msprop:Generator_UserChildTable="Orders" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_UserRelationName="FK__Orders__WhoCreat__2B3F6F97" msprop:Generator_RelationVarName="relationFK__Orders__WhoCreat__2B3F6F97" msprop:Generator_UserParentTable="Users" msprop:Generator_ParentPropName="UsersRow" />
+      <msdata:Relationship name="FK_MaterialForShelf_Shelf" msdata:parent="Shelf" msdata:child="MaterialForShelf" msdata:parentkey="ShelfID" msdata:childkey="IdShelf" msprop:Generator_UserChildTable="MaterialForShelf" msprop:Generator_ChildPropName="GetMaterialForShelfRows" msprop:Generator_UserRelationName="FK_MaterialForShelf_Shelf" msprop:Generator_ParentPropName="ShelfRow" msprop:Generator_RelationVarName="relationFK_MaterialForShelf_Shelf" msprop:Generator_UserParentTable="Shelf" />
+      <msdata:Relationship name="FK_Shelf_Stellazh" msdata:parent="Stellazh" msdata:child="Shelf" msdata:parentkey="StellazhID" msdata:childkey="StellazhID" msprop:Generator_UserChildTable="Shelf" msprop:Generator_ChildPropName="GetShelfRows" msprop:Generator_UserRelationName="FK_Shelf_Stellazh" msprop:Generator_RelationVarName="relationFK_Shelf_Stellazh" msprop:Generator_UserParentTable="Stellazh" msprop:Generator_ParentPropName="StellazhRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

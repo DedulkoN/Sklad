@@ -34,6 +34,8 @@ namespace Sklad
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.View_1". При необходимости она может быть перемещена или удалена.
+            this.view_1TableAdapter.Fill(this.skladDataSet.View_1);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.MaterialForShelf". При необходимости она может быть перемещена или удалена.
             this.materialForShelfTableAdapter.Fill(this.skladDataSet.MaterialForShelf);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "skladDataSet.purpose". При необходимости она может быть перемещена или удалена.
@@ -149,11 +151,11 @@ namespace Sklad
             if(checkBoxStellaz.Checked)
             {
                 if (Filtr == "")
-                { Filtr = string.Format(" [IdShelf] = {0}", comboBoxStellaz.SelectedValue); }
-                else { Filtr += string.Format(" and [IdShelf] = {0}", comboBoxStellaz.SelectedValue); }
+                { Filtr = string.Format(" [ShelfID] = {0}", comboBoxStellaz.SelectedValue); }
+                else { Filtr += string.Format(" and [ShelfID] = {0}", comboBoxStellaz.SelectedValue); }
 
             }
-            materialForShelfBindingSource.Filter = Filtr;
+            view1BindingSource.Filter = Filtr;
 
         }
 

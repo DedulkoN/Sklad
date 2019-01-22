@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTypeOrder));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.typeOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeOrdersTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeOrdersTableAdapter();
             this.typeOrdersIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeOrdersNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
+            this.typeOrdersTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeOrdersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -57,20 +57,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // typeOrdersBindingSource
-            // 
-            this.typeOrdersBindingSource.DataMember = "TypeOrders";
-            this.typeOrdersBindingSource.DataSource = this.skladDataSet;
-            // 
-            // typeOrdersTableAdapter
-            // 
-            this.typeOrdersTableAdapter.ClearBeforeFill = true;
-            // 
             // typeOrdersIDDataGridViewTextBoxColumn
             // 
             this.typeOrdersIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -88,6 +74,20 @@
             this.typeOrdersNameDataGridViewTextBoxColumn.MinimumWidth = 200;
             this.typeOrdersNameDataGridViewTextBoxColumn.Name = "typeOrdersNameDataGridViewTextBoxColumn";
             // 
+            // typeOrdersBindingSource
+            // 
+            this.typeOrdersBindingSource.DataMember = "TypeOrders";
+            this.typeOrdersBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // typeOrdersTableAdapter
+            // 
+            this.typeOrdersTableAdapter.ClearBeforeFill = true;
+            // 
             // FormTypeOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,11 +96,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTypeOrder";
-            this.Text = "Типы ордеров";
+            this.Text = "Сахарорафинатный комбинат - Типы ордеров";
             this.Load += new System.EventHandler(this.FormTypeOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

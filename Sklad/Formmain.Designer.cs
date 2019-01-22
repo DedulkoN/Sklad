@@ -74,10 +74,13 @@
             this.idMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.izmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idShelfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.materialForShelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ShelfID = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Стеллаж = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.view1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.materialForShelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialForShelfTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialForShelfTableAdapter();
+            this.view_1TableAdapter = new Sklad.SkladDataSetTableAdapters.View_1TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).BeginInit();
@@ -92,8 +95,9 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialForShelfBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.view1BindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.materialForShelfBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // typeMaterialBindingSource
@@ -235,42 +239,42 @@
             // типыМатериаловToolStripMenuItem
             // 
             this.типыМатериаловToolStripMenuItem.Name = "типыМатериаловToolStripMenuItem";
-            this.типыМатериаловToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.типыМатериаловToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.типыМатериаловToolStripMenuItem.Text = "Типы материалов";
             this.типыМатериаловToolStripMenuItem.Click += new System.EventHandler(this.типыМатериаловToolStripMenuItem_Click);
             // 
             // отделыToolStripMenuItem
             // 
             this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
-            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.отделыToolStripMenuItem.Text = "Отделы";
             this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
             // 
             // стеллажиToolStripMenuItem
             // 
             this.стеллажиToolStripMenuItem.Name = "стеллажиToolStripMenuItem";
-            this.стеллажиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.стеллажиToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.стеллажиToolStripMenuItem.Text = "Стеллажи";
             this.стеллажиToolStripMenuItem.Click += new System.EventHandler(this.стеллажиToolStripMenuItem_Click);
             // 
             // полкиToolStripMenuItem
             // 
             this.полкиToolStripMenuItem.Name = "полкиToolStripMenuItem";
-            this.полкиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.полкиToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.полкиToolStripMenuItem.Text = "Полки";
             this.полкиToolStripMenuItem.Click += new System.EventHandler(this.полкиToolStripMenuItem_Click);
             // 
             // целиХраненияToolStripMenuItem
             // 
             this.целиХраненияToolStripMenuItem.Name = "целиХраненияToolStripMenuItem";
-            this.целиХраненияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.целиХраненияToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.целиХраненияToolStripMenuItem.Text = "Цели хранения";
             this.целиХраненияToolStripMenuItem.Click += new System.EventHandler(this.целиХраненияToolStripMenuItem_Click);
             // 
             // материалыToolStripMenuItem
             // 
             this.материалыToolStripMenuItem.Name = "материалыToolStripMenuItem";
-            this.материалыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.материалыToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.материалыToolStripMenuItem.Text = "Материалы";
             this.материалыToolStripMenuItem.Click += new System.EventHandler(this.материалыToolStripMenuItem_Click);
             // 
@@ -396,9 +400,10 @@
             this.idMaterialDataGridViewTextBoxColumn,
             this.countDataGridViewTextBoxColumn,
             this.izmDataGridViewTextBoxColumn,
-            this.idShelfDataGridViewTextBoxColumn});
+            this.ShelfID,
+            this.Стеллаж});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.DataSource = this.materialForShelfBindingSource;
+            this.dataGridView1.DataSource = this.view1BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -440,24 +445,36 @@
             // izmDataGridViewTextBoxColumn
             // 
             this.izmDataGridViewTextBoxColumn.DataPropertyName = "Izm";
-            this.izmDataGridViewTextBoxColumn.HeaderText = "ед. изм";
+            this.izmDataGridViewTextBoxColumn.HeaderText = "Единицы измерения";
             this.izmDataGridViewTextBoxColumn.Name = "izmDataGridViewTextBoxColumn";
             // 
-            // idShelfDataGridViewTextBoxColumn
+            // ShelfID
             // 
-            this.idShelfDataGridViewTextBoxColumn.DataPropertyName = "IdShelf";
-            this.idShelfDataGridViewTextBoxColumn.DataSource = this.shelfBindingSource;
-            this.idShelfDataGridViewTextBoxColumn.DisplayMember = "ShelfName";
-            this.idShelfDataGridViewTextBoxColumn.HeaderText = "Полка";
-            this.idShelfDataGridViewTextBoxColumn.Name = "idShelfDataGridViewTextBoxColumn";
-            this.idShelfDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idShelfDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.idShelfDataGridViewTextBoxColumn.ValueMember = "ShelfID";
+            this.ShelfID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ShelfID.DataPropertyName = "ShelfID";
+            this.ShelfID.DataSource = this.shelfBindingSource;
+            this.ShelfID.DisplayMember = "ShelfName";
+            this.ShelfID.HeaderText = "Полка";
+            this.ShelfID.MinimumWidth = 100;
+            this.ShelfID.Name = "ShelfID";
+            this.ShelfID.ValueMember = "ShelfID";
             // 
-            // materialForShelfBindingSource
+            // Стеллаж
             // 
-            this.materialForShelfBindingSource.DataMember = "MaterialForShelf";
-            this.materialForShelfBindingSource.DataSource = this.skladDataSet;
+            this.Стеллаж.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Стеллаж.DataPropertyName = "StellazhID";
+            this.Стеллаж.DataSource = this.stellazhBindingSource;
+            this.Стеллаж.DisplayMember = "StellaxzName";
+            this.Стеллаж.HeaderText = "Стеллаж";
+            this.Стеллаж.MinimumWidth = 100;
+            this.Стеллаж.Name = "Стеллаж";
+            this.Стеллаж.ReadOnly = true;
+            this.Стеллаж.ValueMember = "StellazhID";
+            // 
+            // view1BindingSource
+            // 
+            this.view1BindingSource.DataMember = "View_1";
+            this.view1BindingSource.DataSource = this.skladDataSet;
             // 
             // tabPage2
             // 
@@ -472,9 +489,18 @@
             this.tabPage2.Text = "Фильтры";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // materialForShelfBindingSource
+            // 
+            this.materialForShelfBindingSource.DataMember = "MaterialForShelf";
+            this.materialForShelfBindingSource.DataSource = this.skladDataSet;
+            // 
             // materialForShelfTableAdapter
             // 
             this.materialForShelfTableAdapter.ClearBeforeFill = true;
+            // 
+            // view_1TableAdapter
+            // 
+            this.view_1TableAdapter.ClearBeforeFill = true;
             // 
             // FormMain
             // 
@@ -486,7 +512,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "Главное окно";
+            this.Text = "Сахарорафинатный комбинат - Главное окно";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
@@ -505,8 +531,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialForShelfBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.view1BindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.materialForShelfBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,12 +584,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource materialForShelfBindingSource;
         private SkladDataSetTableAdapters.MaterialForShelfTableAdapter materialForShelfTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem материалыToolStripMenuItem;
+        private System.Windows.Forms.BindingSource view1BindingSource;
+        private SkladDataSetTableAdapters.View_1TableAdapter view_1TableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn idMaterialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn izmDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn idShelfDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem материалыToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ShelfID;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Стеллаж;
     }
 }
 

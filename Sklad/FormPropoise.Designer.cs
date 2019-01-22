@@ -96,7 +96,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPropoise";
-            this.Text = "Цели хранения";
+            this.Text = "Сахарорафинатный комбинат - Цели хранения";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPropoise_FormClosed);
             this.Load += new System.EventHandler(this.FormPropoise_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

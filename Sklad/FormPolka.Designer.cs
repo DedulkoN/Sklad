@@ -31,18 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPolka));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.shelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.shelfTableAdapter = new Sklad.SkladDataSetTableAdapters.ShelfTableAdapter();
-            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
             this.shelfIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shelfNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StellazhID = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.stellazhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
+            this.shelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shelfTableAdapter = new Sklad.SkladDataSetTableAdapters.ShelfTableAdapter();
+            this.stellazhTableAdapter = new Sklad.SkladDataSetTableAdapters.StellazhTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,29 +62,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
-            // 
-            // shelfBindingSource
-            // 
-            this.shelfBindingSource.DataMember = "Shelf";
-            this.shelfBindingSource.DataSource = this.skladDataSet;
-            // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // shelfTableAdapter
-            // 
-            this.shelfTableAdapter.ClearBeforeFill = true;
-            // 
-            // stellazhBindingSource
-            // 
-            this.stellazhBindingSource.DataMember = "Stellazh";
-            this.stellazhBindingSource.DataSource = this.skladDataSet;
-            // 
-            // stellazhTableAdapter
-            // 
-            this.stellazhTableAdapter.ClearBeforeFill = true;
             // 
             // shelfIDDataGridViewTextBoxColumn
             // 
@@ -110,6 +87,29 @@
             this.StellazhID.Name = "StellazhID";
             this.StellazhID.ValueMember = "StellazhID";
             // 
+            // stellazhBindingSource
+            // 
+            this.stellazhBindingSource.DataMember = "Stellazh";
+            this.stellazhBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // shelfBindingSource
+            // 
+            this.shelfBindingSource.DataMember = "Shelf";
+            this.shelfBindingSource.DataSource = this.skladDataSet;
+            // 
+            // shelfTableAdapter
+            // 
+            this.shelfTableAdapter.ClearBeforeFill = true;
+            // 
+            // stellazhTableAdapter
+            // 
+            this.stellazhTableAdapter.ClearBeforeFill = true;
+            // 
             // FormPolka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,13 +118,13 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPolka";
-            this.Text = "Полки";
+            this.Text = "Сахарорафинатный комбинат - Полки";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPolka_FormClosed);
             this.Load += new System.EventHandler(this.FormPolka_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stellazhBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shelfBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

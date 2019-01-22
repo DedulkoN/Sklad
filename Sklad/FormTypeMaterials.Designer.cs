@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTypeMaterials));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.typeMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
             this.typeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
+            this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -58,20 +58,6 @@
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // typeMaterialBindingSource
-            // 
-            this.typeMaterialBindingSource.DataMember = "TypeMaterial";
-            this.typeMaterialBindingSource.DataSource = this.skladDataSet;
-            // 
-            // typeMaterialTableAdapter
-            // 
-            this.typeMaterialTableAdapter.ClearBeforeFill = true;
-            // 
             // typeIDDataGridViewTextBoxColumn
             // 
             this.typeIDDataGridViewTextBoxColumn.DataPropertyName = "TypeID";
@@ -88,6 +74,20 @@
             this.typeNameDataGridViewTextBoxColumn.MinimumWidth = 100;
             this.typeNameDataGridViewTextBoxColumn.Name = "typeNameDataGridViewTextBoxColumn";
             // 
+            // typeMaterialBindingSource
+            // 
+            this.typeMaterialBindingSource.DataMember = "TypeMaterial";
+            this.typeMaterialBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // typeMaterialTableAdapter
+            // 
+            this.typeMaterialTableAdapter.ClearBeforeFill = true;
+            // 
             // FormTypeMaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,12 +96,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTypeMaterials";
-            this.Text = "Типы материала";
+            this.Text = "Сахарорафинатный комбинат - Типы материала";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTypeMaterials_FormClosed);
             this.Load += new System.EventHandler(this.FormTypeMaterials_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

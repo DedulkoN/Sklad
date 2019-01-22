@@ -31,16 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDepartament));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.departamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departamentTableAdapter = new Sklad.SkladDataSetTableAdapters.DepartamentTableAdapter();
             this.departamentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIOSypervisorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
+            this.departamentTableAdapter = new Sklad.SkladDataSetTableAdapters.DepartamentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -61,20 +61,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
-            // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departamentBindingSource
-            // 
-            this.departamentBindingSource.DataMember = "Departament";
-            this.departamentBindingSource.DataSource = this.skladDataSet;
-            // 
-            // departamentTableAdapter
-            // 
-            this.departamentTableAdapter.ClearBeforeFill = true;
             // 
             // departamentIDDataGridViewTextBoxColumn
             // 
@@ -106,6 +92,20 @@
             this.fIOSypervisorDataGridViewTextBoxColumn.MinimumWidth = 100;
             this.fIOSypervisorDataGridViewTextBoxColumn.Name = "fIOSypervisorDataGridViewTextBoxColumn";
             // 
+            // departamentBindingSource
+            // 
+            this.departamentBindingSource.DataMember = "Departament";
+            this.departamentBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // departamentTableAdapter
+            // 
+            this.departamentTableAdapter.ClearBeforeFill = true;
+            // 
             // FormDepartament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,12 +114,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDepartament";
-            this.Text = "Отделы";
+            this.Text = "Сахарорафинатный комбинат -Отделы";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDepartament_FormClosed);
             this.Load += new System.EventHandler(this.FormDepartament_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

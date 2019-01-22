@@ -31,26 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materials));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.skladDataSet = new Sklad.SkladDataSet();
-            this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.materialsTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialsTableAdapter();
-            this.typeMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
-            this.departamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departamentTableAdapter = new Sklad.SkladDataSetTableAdapters.DepartamentTableAdapter();
-            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             this.materialsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeMaterialIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.typeMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skladDataSet = new Sklad.SkladDataSet();
             this.departamentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.departamentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.purposeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.purposeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialsTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialsTableAdapter();
+            this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
+            this.departamentTableAdapter = new Sklad.SkladDataSetTableAdapters.DepartamentTableAdapter();
+            this.purposeTableAdapter = new Sklad.SkladDataSetTableAdapters.purposeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,47 +72,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
-            // skladDataSet
-            // 
-            this.skladDataSet.DataSetName = "SkladDataSet";
-            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // materialsBindingSource
-            // 
-            this.materialsBindingSource.DataMember = "Materials";
-            this.materialsBindingSource.DataSource = this.skladDataSet;
-            // 
-            // materialsTableAdapter
-            // 
-            this.materialsTableAdapter.ClearBeforeFill = true;
-            // 
-            // typeMaterialBindingSource
-            // 
-            this.typeMaterialBindingSource.DataMember = "TypeMaterial";
-            this.typeMaterialBindingSource.DataSource = this.skladDataSet;
-            // 
-            // typeMaterialTableAdapter
-            // 
-            this.typeMaterialTableAdapter.ClearBeforeFill = true;
-            // 
-            // departamentBindingSource
-            // 
-            this.departamentBindingSource.DataMember = "Departament";
-            this.departamentBindingSource.DataSource = this.skladDataSet;
-            // 
-            // departamentTableAdapter
-            // 
-            this.departamentTableAdapter.ClearBeforeFill = true;
-            // 
-            // purposeBindingSource
-            // 
-            this.purposeBindingSource.DataMember = "purpose";
-            this.purposeBindingSource.DataSource = this.skladDataSet;
-            // 
-            // purposeTableAdapter
-            // 
-            this.purposeTableAdapter.ClearBeforeFill = true;
-            // 
             // materialsIDDataGridViewTextBoxColumn
             // 
             this.materialsIDDataGridViewTextBoxColumn.DataPropertyName = "MaterialsID";
@@ -131,6 +90,7 @@
             // 
             // typeMaterialIDDataGridViewTextBoxColumn
             // 
+            this.typeMaterialIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.typeMaterialIDDataGridViewTextBoxColumn.DataPropertyName = "TypeMaterialID";
             this.typeMaterialIDDataGridViewTextBoxColumn.DataSource = this.typeMaterialBindingSource;
             this.typeMaterialIDDataGridViewTextBoxColumn.DisplayMember = "TypeName";
@@ -139,9 +99,21 @@
             this.typeMaterialIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.typeMaterialIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.typeMaterialIDDataGridViewTextBoxColumn.ValueMember = "TypeID";
+            this.typeMaterialIDDataGridViewTextBoxColumn.Width = 39;
+            // 
+            // typeMaterialBindingSource
+            // 
+            this.typeMaterialBindingSource.DataMember = "TypeMaterial";
+            this.typeMaterialBindingSource.DataSource = this.skladDataSet;
+            // 
+            // skladDataSet
+            // 
+            this.skladDataSet.DataSetName = "SkladDataSet";
+            this.skladDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // departamentIDDataGridViewTextBoxColumn
             // 
+            this.departamentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.departamentIDDataGridViewTextBoxColumn.DataPropertyName = "DepartamentID";
             this.departamentIDDataGridViewTextBoxColumn.DataSource = this.departamentBindingSource;
             this.departamentIDDataGridViewTextBoxColumn.DisplayMember = "DepartamentName";
@@ -150,9 +122,16 @@
             this.departamentIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.departamentIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.departamentIDDataGridViewTextBoxColumn.ValueMember = "DepartamentID";
+            this.departamentIDDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // departamentBindingSource
+            // 
+            this.departamentBindingSource.DataMember = "Departament";
+            this.departamentBindingSource.DataSource = this.skladDataSet;
             // 
             // purposeIDDataGridViewTextBoxColumn
             // 
+            this.purposeIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.purposeIDDataGridViewTextBoxColumn.DataPropertyName = "purposeID";
             this.purposeIDDataGridViewTextBoxColumn.DataSource = this.purposeBindingSource;
             this.purposeIDDataGridViewTextBoxColumn.DisplayMember = "purposeName";
@@ -161,6 +140,33 @@
             this.purposeIDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.purposeIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.purposeIDDataGridViewTextBoxColumn.ValueMember = "purposeID";
+            this.purposeIDDataGridViewTextBoxColumn.Width = 39;
+            // 
+            // purposeBindingSource
+            // 
+            this.purposeBindingSource.DataMember = "purpose";
+            this.purposeBindingSource.DataSource = this.skladDataSet;
+            // 
+            // materialsBindingSource
+            // 
+            this.materialsBindingSource.DataMember = "Materials";
+            this.materialsBindingSource.DataSource = this.skladDataSet;
+            // 
+            // materialsTableAdapter
+            // 
+            this.materialsTableAdapter.ClearBeforeFill = true;
+            // 
+            // typeMaterialTableAdapter
+            // 
+            this.typeMaterialTableAdapter.ClearBeforeFill = true;
+            // 
+            // departamentTableAdapter
+            // 
+            this.departamentTableAdapter.ClearBeforeFill = true;
+            // 
+            // purposeTableAdapter
+            // 
+            this.purposeTableAdapter.ClearBeforeFill = true;
             // 
             // Materials
             // 
@@ -170,15 +176,15 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Materials";
-            this.Text = "Материалы";
+            this.Text = "Сахарорафинатный комбинат - Материалы";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Materials_FormClosed);
             this.Load += new System.EventHandler(this.Materials_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
