@@ -512,7 +512,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "Сахарорафинатный комбинат - Главное окно";
+            this.Text = "Сахарорафинадный комбинат - Главное окно";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();

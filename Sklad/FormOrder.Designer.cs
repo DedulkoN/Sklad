@@ -610,7 +610,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormOrder";
-            this.Text = "Сахарорафинатный комбинат - Ордера";
+            this.Text = "Сахарорафинадный комбинат - Ордера";
             this.Load += new System.EventHandler(this.FormOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).EndInit();
