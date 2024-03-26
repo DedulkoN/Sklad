@@ -16,19 +16,9 @@ namespace Sklad
         private int UserID = 0;
         public FormMain()
         {
-            FormLogin fl = new FormLogin();
-            if( fl.ShowDialog() == DialogResult.OK)
-            {
-                UserRoleID = fl.UserRoleID;
-                UserID = fl.UserID;
-            }
-            else
-            {
-                this.Close();
-                Application.Exit();
-            }
+            
             InitializeComponent();
-            if (UserRoleID != 1) панельАдминистратораToolStripMenuItem.Visible = false;
+            
            
         }
 
@@ -159,22 +149,11 @@ namespace Sklad
 
         }
 
-        private void панельАдминистратораToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormAdminPanel formAdminPanel = new FormAdminPanel();
-            formAdminPanel.Show();
-        }
+        
 
-        private void ордераToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormOrder formOrder = new FormOrder((short)UserID);
-            formOrder.Show();
-        }
+      
 
-        private void dsuhepbnmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToOffice.ExportToExcel(dataGridView1);
-        }
+
 
 
 
@@ -201,10 +180,7 @@ namespace Sklad
             dataGridView1.BeginEdit(true);
         }
 
-        private void выгрузитьДанныеВWordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ToOffice.ExportToWord(dataGridView1);
-        }
+       
 
         private void материалыToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -214,5 +190,12 @@ namespace Sklad
                 this.materialsTableAdapter.Fill(this.skladDataSet.Materials);
             }
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+
     }
 }
