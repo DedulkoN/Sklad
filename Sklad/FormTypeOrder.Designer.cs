@@ -96,7 +96,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTypeOrder";
-            this.Text = "Сахарорафинадный комбинат - Типы ордеров";
+            this.Text = "ОАО \"БААЗ\" - Типы ордеров";
             this.Load += new System.EventHandler(this.FormTypeOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).EndInit();

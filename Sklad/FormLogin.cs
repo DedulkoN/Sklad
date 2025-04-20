@@ -23,6 +23,7 @@ namespace Sklad
         private void button1_Click(object sender, EventArgs e)
         {
             usersBindingSource.Filter = string.Format("UserLogin = '{0}' and UserPassword = '{1}'", textBoxLogin.Text, Crypt.Encrypt(textBoxPass.Text));
+            //usersBindingSource.Filter = string.Format("UserLogin = '{0}'", textBoxLogin.Text);
             if (usersBindingSource.Count >0)
             {
                 UserRoleID = Convert.ToInt32((usersBindingSource.Current as DataRowView).Row["RolesUser"]);

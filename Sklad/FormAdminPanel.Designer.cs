@@ -288,7 +288,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAdminPanel";
-            this.Text = "Сахарорафинадный комбинат -Панель администратора";
+            this.Text = "ОАО \"БААЗ\" -Панель администратора";
             this.Load += new System.EventHandler(this.FormAdminPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleUsersBindingSource)).EndInit();

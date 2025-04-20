@@ -94,7 +94,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStellazh";
-            this.Text = "Сахарорафинадный комбинат -Стеллажи";
+            this.Text = "ОАО \"БААЗ\" - Стеллажи";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormStellazh_FormClosed);
             this.Load += new System.EventHandler(this.FormStellazh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

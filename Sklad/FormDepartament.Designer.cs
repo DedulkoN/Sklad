@@ -114,7 +114,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDepartament";
-            this.Text = "Сахарорафинадный комбинат -Отделы";
+            this.Text = "ОАО \"БААЗ\" -Отделы";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDepartament_FormClosed);
             this.Load += new System.EventHandler(this.FormDepartament_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -138,5 +138,10 @@ namespace Sklad
         {
             ToOffice.ExportToWord(dataGridView1);
         }
+
+        private void выгрузитьДанныеВPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToPDF.ExportToPDF(dataGridView1);
+        }
     }
 }

@@ -92,47 +92,87 @@ namespace Sklad
 
         private void типыМатериаловToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTypeMaterials f = new FormTypeMaterials();
-            if (f.ShowDialog() == DialogResult.OK)
+            var outer = Task.Factory.StartNew(() =>      
             {
-                this.typeMaterialTableAdapter.Fill(this.skladDataSet.TypeMaterial);
-            }
+                try
+                {
+                    FormTypeMaterials f = new FormTypeMaterials();
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        this.typeMaterialTableAdapter.Fill(this.skladDataSet.TypeMaterial);
+                    }
+                }
+                catch { }
+            });
+            outer.Wait();
         }
 
         private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDepartament f = new FormDepartament();
-            if(f.ShowDialog() == DialogResult.OK)
+            var outer = Task.Factory.StartNew(() =>     
             {
-                this.departamentTableAdapter.Fill(this.skladDataSet.Departament);
-            }
+                try
+                {
+                    FormDepartament f = new FormDepartament();
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        this.departamentTableAdapter.Fill(this.skladDataSet.Departament);
+                    }
+                }
+                catch { }
+            });
+            outer.Wait();
         }
 
         private void стеллажиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormStellazh f = new FormStellazh();
-            if (f.ShowDialog() == DialogResult.OK)
+            var outer = Task.Factory.StartNew(() =>
             {
-                this.stellazhTableAdapter.Fill(this.skladDataSet.Stellazh);
-            }
+                try
+                {
+                    FormStellazh f = new FormStellazh();
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        this.stellazhTableAdapter.Fill(this.skladDataSet.Stellazh);
+                    }
+                }
+                catch { }
+            });
+            outer.Wait();
         }
 
         private void полкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPolka f = new FormPolka();
-            if(f.ShowDialog() == DialogResult.OK)
+            var outer = Task.Factory.StartNew(() =>
             {
-                this.shelfTableAdapter.Fill(this.skladDataSet.Shelf);
-            }
+                try
+                {
+                    FormPolka f = new FormPolka();
+                    if(f.ShowDialog() == DialogResult.OK)
+                    {
+                        this.shelfTableAdapter.Fill(this.skladDataSet.Shelf);
+                    }
+                }
+                catch { }
+            });
+            outer.Wait();
         }
 
         private void целиХраненияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormPropoise f = new FormPropoise();
-            if(f.ShowDialog() == DialogResult.OK)
+            var outer = Task.Factory.StartNew(() =>
             {
-                this.purposeTableAdapter.Fill(this.skladDataSet.purpose);
-            }
+                try
+                {
+                    FormPropoise f = new FormPropoise();
+                    if(f.ShowDialog() == DialogResult.OK)
+                    {
+                        this.purposeTableAdapter.Fill(this.skladDataSet.purpose);
+                    }
+                }
+                catch { }
+            });
+            outer.Wait();
         }
 
 
@@ -161,8 +201,10 @@ namespace Sklad
 
         private void панельАдминистратораToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAdminPanel formAdminPanel = new FormAdminPanel();
-            formAdminPanel.Show();
+            
+                    FormAdminPanel formAdminPanel = new FormAdminPanel();
+                    formAdminPanel.Show();
+               
         }
 
         private void ордераToolStripMenuItem_Click(object sender, EventArgs e)
@@ -208,11 +250,29 @@ namespace Sklad
 
         private void материалыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Materials fm = new Materials();
-            if (fm.ShowDialog() == DialogResult.OK)
+            var outer = Task.Factory.StartNew(() =>
             {
-                this.materialsTableAdapter.Fill(this.skladDataSet.Materials);
-            }
+                try
+                {
+                    Materials fm = new Materials();
+                    if (fm.ShowDialog() == DialogResult.OK)
+                    {
+                        this.materialsTableAdapter.Fill(this.skladDataSet.Materials);
+                    }
+                }
+                catch { }
+            });
+            outer.Wait();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void выгрузитьДанныеВPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToPDF.ExportToPDF(dataGridView1);
         }
     }
 }

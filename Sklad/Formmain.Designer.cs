@@ -81,6 +81,7 @@
             this.materialForShelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialForShelfTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialForShelfTableAdapter();
             this.view_1TableAdapter = new Sklad.SkladDataSetTableAdapters.View_1TableAdapter();
+            this.выгрузитьДанныеВPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).BeginInit();
@@ -138,9 +139,11 @@
             this.удалитьЗаписьToolStripMenuItem,
             this.toolStripSeparator1,
             this.dsuhepbnmToolStripMenuItem,
-            this.выгрузитьДанныеВWordToolStripMenuItem});
+            this.выгрузитьДанныеВWordToolStripMenuItem,
+            this.выгрузитьДанныеВPDFToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 164);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // обновитьToolStripMenuItem
             // 
@@ -239,42 +242,42 @@
             // типыМатериаловToolStripMenuItem
             // 
             this.типыМатериаловToolStripMenuItem.Name = "типыМатериаловToolStripMenuItem";
-            this.типыМатериаловToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.типыМатериаловToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.типыМатериаловToolStripMenuItem.Text = "Типы материалов";
             this.типыМатериаловToolStripMenuItem.Click += new System.EventHandler(this.типыМатериаловToolStripMenuItem_Click);
             // 
             // отделыToolStripMenuItem
             // 
             this.отделыToolStripMenuItem.Name = "отделыToolStripMenuItem";
-            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.отделыToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.отделыToolStripMenuItem.Text = "Отделы";
             this.отделыToolStripMenuItem.Click += new System.EventHandler(this.отделыToolStripMenuItem_Click);
             // 
             // стеллажиToolStripMenuItem
             // 
             this.стеллажиToolStripMenuItem.Name = "стеллажиToolStripMenuItem";
-            this.стеллажиToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.стеллажиToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.стеллажиToolStripMenuItem.Text = "Стеллажи";
             this.стеллажиToolStripMenuItem.Click += new System.EventHandler(this.стеллажиToolStripMenuItem_Click);
             // 
             // полкиToolStripMenuItem
             // 
             this.полкиToolStripMenuItem.Name = "полкиToolStripMenuItem";
-            this.полкиToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.полкиToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.полкиToolStripMenuItem.Text = "Полки";
             this.полкиToolStripMenuItem.Click += new System.EventHandler(this.полкиToolStripMenuItem_Click);
             // 
             // целиХраненияToolStripMenuItem
             // 
             this.целиХраненияToolStripMenuItem.Name = "целиХраненияToolStripMenuItem";
-            this.целиХраненияToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.целиХраненияToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.целиХраненияToolStripMenuItem.Text = "Цели хранения";
             this.целиХраненияToolStripMenuItem.Click += new System.EventHandler(this.целиХраненияToolStripMenuItem_Click);
             // 
             // материалыToolStripMenuItem
             // 
             this.материалыToolStripMenuItem.Name = "материалыToolStripMenuItem";
-            this.материалыToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.материалыToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.материалыToolStripMenuItem.Text = "Материалы";
             this.материалыToolStripMenuItem.Click += new System.EventHandler(this.материалыToolStripMenuItem_Click);
             // 
@@ -502,6 +505,13 @@
             // 
             this.view_1TableAdapter.ClearBeforeFill = true;
             // 
+            // выгрузитьДанныеВPDFToolStripMenuItem
+            // 
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Name = "выгрузитьДанныеВPDFToolStripMenuItem";
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Text = "Выгрузить данные в PDF";
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВPDFToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,7 +522,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
-            this.Text = "Сахарорафинадный комбинат - Главное окно";
+            this.Text = "ОАО \"БААЗ\" - Главное окно";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).EndInit();
@@ -593,6 +603,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn izmDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn ShelfID;
         private System.Windows.Forms.DataGridViewComboBoxColumn Стеллаж;
+        private System.Windows.Forms.ToolStripMenuItem выгрузитьДанныеВPDFToolStripMenuItem;
     }
 }
 

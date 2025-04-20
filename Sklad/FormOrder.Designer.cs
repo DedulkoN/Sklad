@@ -84,6 +84,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.comboBoxFiltrType = new System.Windows.Forms.ComboBox();
             this.checkBoxType = new System.Windows.Forms.CheckBox();
+            this.выгрузитьДанныеВPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
@@ -240,9 +241,10 @@
             this.отобразитьскрытьПанельФильтровToolStripMenuItem,
             this.toolStripSeparator1,
             this.выгрузитьДанныеВExcelToolStripMenuItem,
-            this.dSuhepbnmLfyystToolStripMenuItem});
+            this.dSuhepbnmLfyystToolStripMenuItem,
+            this.выгрузитьДанныеВPDFToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(282, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(282, 142);
             // 
             // добавитьЗаписьToolStripMenuItem
             // 
@@ -600,6 +602,13 @@
             this.checkBoxType.Text = "Активен";
             this.checkBoxType.UseVisualStyleBackColor = true;
             // 
+            // выгрузитьДанныеВPDFToolStripMenuItem
+            // 
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Name = "выгрузитьДанныеВPDFToolStripMenuItem";
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Size = new System.Drawing.Size(281, 22);
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Text = "Выгрузить данные в PDF";
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВPDFToolStripMenuItem_Click);
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -610,7 +619,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormOrder";
-            this.Text = "Сахарорафинадный комбинат - Ордера";
+            this.Text = "ОАО \"БААЗ\" - Ордера";
             this.Load += new System.EventHandler(this.FormOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOrdersBindingSource)).EndInit();
@@ -697,5 +706,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
         private System.Windows.Forms.DataGridViewTextBoxColumn Izm;
         private System.Windows.Forms.DataGridViewTextBoxColumn infoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem выгрузитьДанныеВPDFToolStripMenuItem;
     }
 }

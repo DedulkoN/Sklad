@@ -96,7 +96,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormTypeMaterials";
-            this.Text = "Сахарорафинадный комбинат - Типы материала";
+            this.Text = "ОАО \"БААЗ\" - Типы материала";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTypeMaterials_FormClosed);
             this.Load += new System.EventHandler(this.FormTypeMaterials_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
