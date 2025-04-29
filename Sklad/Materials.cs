@@ -48,5 +48,10 @@ namespace Sklad
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

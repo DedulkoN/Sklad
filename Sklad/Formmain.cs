@@ -55,18 +55,22 @@ namespace Sklad
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
+            //if (dataGridView1.Rows[e.RowIndex].Cells[1].Value != DBNull.Value &&
+            //    dataGridView1.Rows[e.RowIndex].Cells[2].Value != DBNull.Value &&
+            //    dataGridView1.Rows[e.RowIndex].Cells[3].Value != DBNull.Value &&
+            //    dataGridView1.Rows[e.RowIndex].Cells[4].Value != DBNull.Value)
+            //{
+            //    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != DBNull.Value)
+            //        dataGridView1.Rows[e.RowIndex].Cells[0].Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex - 1].Cells[0].Value) + 1;
                 Validate();
                 materialForShelfBindingSource.EndEdit();
                 materialForShelfTableAdapter.Update(skladDataSet.MaterialForShelf);
-            }
-            catch { }
+            //}
         }
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-
+           // MessageBox.Show(e.Exception.Message);
         }
 
         private void dataGridView1_AllowUserToDeleteRowsChanged(object sender, EventArgs e)
@@ -92,8 +96,7 @@ namespace Sklad
 
         private void типыМатериаловToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var outer = Task.Factory.StartNew(() =>      
-            {
+           
                 try
                 {
                     FormTypeMaterials f = new FormTypeMaterials();
@@ -103,14 +106,12 @@ namespace Sklad
                     }
                 }
                 catch { }
-            });
-            outer.Wait();
+           
         }
 
         private void отделыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var outer = Task.Factory.StartNew(() =>     
-            {
+           
                 try
                 {
                     FormDepartament f = new FormDepartament();
@@ -120,14 +121,12 @@ namespace Sklad
                     }
                 }
                 catch { }
-            });
-            outer.Wait();
+           
         }
 
         private void стеллажиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var outer = Task.Factory.StartNew(() =>
-            {
+           
                 try
                 {
                     FormStellazh f = new FormStellazh();
@@ -137,14 +136,12 @@ namespace Sklad
                     }
                 }
                 catch { }
-            });
-            outer.Wait();
+           
         }
 
         private void полкиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var outer = Task.Factory.StartNew(() =>
-            {
+           
                 try
                 {
                     FormPolka f = new FormPolka();
@@ -154,14 +151,12 @@ namespace Sklad
                     }
                 }
                 catch { }
-            });
-            outer.Wait();
+          
         }
 
         private void целиХраненияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var outer = Task.Factory.StartNew(() =>
-            {
+           
                 try
                 {
                     FormPropoise f = new FormPropoise();
@@ -171,8 +166,7 @@ namespace Sklad
                     }
                 }
                 catch { }
-            });
-            outer.Wait();
+            
         }
 
 
@@ -250,8 +244,7 @@ namespace Sklad
 
         private void материалыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var outer = Task.Factory.StartNew(() =>
-            {
+           
                 try
                 {
                     Materials fm = new Materials();
@@ -261,8 +254,7 @@ namespace Sklad
                     }
                 }
                 catch { }
-            });
-            outer.Wait();
+          
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
@@ -273,6 +265,11 @@ namespace Sklad
         private void выгрузитьДанныеВPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ToPDF.ExportToPDF(dataGridView1);
+        }
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+           
         }
     }
 }

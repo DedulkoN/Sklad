@@ -43,6 +43,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.dsuhepbnmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выгрузитьДанныеВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выгрузитьДанныеВPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialsTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialsTableAdapter();
             this.typeMaterialTableAdapter = new Sklad.SkladDataSetTableAdapters.TypeMaterialTableAdapter();
@@ -70,18 +71,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.izmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShelfID = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Стеллаж = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.view1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialForShelfBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.materialForShelfTableAdapter = new Sklad.SkladDataSetTableAdapters.MaterialForShelfTableAdapter();
             this.view_1TableAdapter = new Sklad.SkladDataSetTableAdapters.View_1TableAdapter();
-            this.выгрузитьДанныеВPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.izmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShelfID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.typeMaterialBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skladDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentBindingSource)).BeginInit();
@@ -142,7 +141,7 @@
             this.выгрузитьДанныеВWordToolStripMenuItem,
             this.выгрузитьДанныеВPDFToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 164);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(217, 142);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // обновитьToolStripMenuItem
@@ -184,6 +183,13 @@
             this.выгрузитьДанныеВWordToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.выгрузитьДанныеВWordToolStripMenuItem.Text = "Выгрузить данные в Word";
             this.выгрузитьДанныеВWordToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВWordToolStripMenuItem_Click);
+            // 
+            // выгрузитьДанныеВPDFToolStripMenuItem
+            // 
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Name = "выгрузитьДанныеВPDFToolStripMenuItem";
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Text = "Выгрузить данные в PDF";
+            this.выгрузитьДанныеВPDFToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВPDFToolStripMenuItem_Click);
             // 
             // materialsBindingSource
             // 
@@ -403,10 +409,9 @@
             this.idMaterialDataGridViewTextBoxColumn,
             this.countDataGridViewTextBoxColumn,
             this.izmDataGridViewTextBoxColumn,
-            this.ShelfID,
-            this.Стеллаж});
+            this.ShelfID});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.DataSource = this.view1BindingSource;
+            this.dataGridView1.DataSource = this.materialForShelfBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -416,7 +421,39 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
+            // 
+            // view1BindingSource
+            // 
+            this.view1BindingSource.DataMember = "View_1";
+            this.view1BindingSource.DataSource = this.skladDataSet;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(907, 423);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Фильтры";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // materialForShelfBindingSource
+            // 
+            this.materialForShelfBindingSource.DataMember = "MaterialForShelf";
+            this.materialForShelfBindingSource.DataSource = this.skladDataSet;
+            // 
+            // materialForShelfTableAdapter
+            // 
+            this.materialForShelfTableAdapter.ClearBeforeFill = true;
+            // 
+            // view_1TableAdapter
+            // 
+            this.view_1TableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -454,63 +491,13 @@
             // ShelfID
             // 
             this.ShelfID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ShelfID.DataPropertyName = "ShelfID";
+            this.ShelfID.DataPropertyName = "IdShelf";
             this.ShelfID.DataSource = this.shelfBindingSource;
             this.ShelfID.DisplayMember = "ShelfName";
             this.ShelfID.HeaderText = "Полка";
             this.ShelfID.MinimumWidth = 100;
             this.ShelfID.Name = "ShelfID";
             this.ShelfID.ValueMember = "ShelfID";
-            // 
-            // Стеллаж
-            // 
-            this.Стеллаж.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Стеллаж.DataPropertyName = "StellazhID";
-            this.Стеллаж.DataSource = this.stellazhBindingSource;
-            this.Стеллаж.DisplayMember = "StellaxzName";
-            this.Стеллаж.HeaderText = "Стеллаж";
-            this.Стеллаж.MinimumWidth = 100;
-            this.Стеллаж.Name = "Стеллаж";
-            this.Стеллаж.ReadOnly = true;
-            this.Стеллаж.ValueMember = "StellazhID";
-            // 
-            // view1BindingSource
-            // 
-            this.view1BindingSource.DataMember = "View_1";
-            this.view1BindingSource.DataSource = this.skladDataSet;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(907, 423);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Фильтры";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // materialForShelfBindingSource
-            // 
-            this.materialForShelfBindingSource.DataMember = "MaterialForShelf";
-            this.materialForShelfBindingSource.DataSource = this.skladDataSet;
-            // 
-            // materialForShelfTableAdapter
-            // 
-            this.materialForShelfTableAdapter.ClearBeforeFill = true;
-            // 
-            // view_1TableAdapter
-            // 
-            this.view_1TableAdapter.ClearBeforeFill = true;
-            // 
-            // выгрузитьДанныеВPDFToolStripMenuItem
-            // 
-            this.выгрузитьДанныеВPDFToolStripMenuItem.Name = "выгрузитьДанныеВPDFToolStripMenuItem";
-            this.выгрузитьДанныеВPDFToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.выгрузитьДанныеВPDFToolStripMenuItem.Text = "Выгрузить данные в PDF";
-            this.выгрузитьДанныеВPDFToolStripMenuItem.Click += new System.EventHandler(this.выгрузитьДанныеВPDFToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -597,13 +584,12 @@
         private System.Windows.Forms.ToolStripMenuItem материалыToolStripMenuItem;
         private System.Windows.Forms.BindingSource view1BindingSource;
         private SkladDataSetTableAdapters.View_1TableAdapter view_1TableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem выгрузитьДанныеВPDFToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn idMaterialDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn izmDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn ShelfID;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Стеллаж;
-        private System.Windows.Forms.ToolStripMenuItem выгрузитьДанныеВPDFToolStripMenuItem;
     }
 }
 
