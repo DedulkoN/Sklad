@@ -185,11 +185,11 @@ namespace Sklad
             if(checkBoxStellaz.Checked)
             {
                 if (Filtr == "")
-                { Filtr = string.Format(" [ShelfID] = {0}", comboBoxStellaz.SelectedValue); }
-                else { Filtr += string.Format(" and [ShelfID] = {0}", comboBoxStellaz.SelectedValue); }
+                { Filtr = string.Format(" [IdShelf] = {0}", comboBoxStellaz.SelectedValue); }
+                else { Filtr += string.Format(" and [IdShelf] = {0}", comboBoxStellaz.SelectedValue); }
 
             }
-            view1BindingSource.Filter = Filtr;
+            materialForShelfBindingSource.Filter = Filtr;
 
         }
 
